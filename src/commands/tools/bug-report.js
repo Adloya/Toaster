@@ -1,0 +1,31 @@
+const Discord = require('discord.js');
+const default_embeds_color = "#90c53f";
+
+
+module.exports.help = {
+    name: 'bug-report',
+    description: "Signaler un bug au créateur du bot (@Adloya#1873)",
+    category: 'tools'
+}
+module.exports.run = async (client, message, args) => {
+    const destinationChannel = "856539894595846164"
+
+    const query = args.join(" ");
+    if(!query) return message.reply("Merci de spécifier un bug à signaler, décrivez le en détail");
+
+    const reportEmbed = new Discord.MessageEmbed()
+        .setColor(`${default_embeds_color}`)
+        .setAuthor("MultiJS", "http://adloteam.42web.io/adloteam/MultiJS/MULTI.png")
+        .setDescription("Signaler un bug")
+        .setFooter("MultiJS - Created by Adloya")
+        .setTitle("❗ | Signaler un bug")
+        .setTimestamp()
+        .addFields(
+            {name: 'Utilisateur qui a signalé le bug : ', value: message.author.toString(), inline: true},
+            {name: 'Serveur ', value: message.guild.name, inline: true},
+            {name: 'Signalement : ', value: query, inline: true}
+        );
+    client.channels.cache.get(destinationChannel).send(reportEmbed);
+    message.channel.send(`Signalement envoyé !`);
+    message.channel.send(reportEmbed);
+}

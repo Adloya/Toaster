@@ -31,7 +31,9 @@ node main.js
 
 ## Contributing
 Pour contribuer, utilisez les Pull-requests
+
 Pour des changements MAJEURS, mettez les dans un ISSUE
+
 TESTEZ VOS CONTRIBUTIONS !
 
 

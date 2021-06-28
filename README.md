@@ -55,7 +55,9 @@ Oui
 
 ##### \*Prefix [new prefix]: 
 ``config prefix //``
-         ---------
+
+         ------
+         
 Changer le prefixe de votre serveur
 
 ### -----------------------------
@@ -95,7 +97,9 @@ Facultatif
 
 ##### Command :
 ``help help``
+
        ----
+       
 La commande sur laquelle vous voulez avoir des informations
 
 
@@ -169,8 +173,11 @@ Oui
 #### Arguments
 
 ##### \*Member :
+
 ``userinfo @Clyde``
+
            ------
+           
 Le membre sur lequel vous voulez avoir des informations
 
 
@@ -193,13 +200,19 @@ Oui
 #### Arguments :
 
 ##### \*Member :
+
 ``ban Clyde``
+
       -----
+      
 Le membre que vous souhaitez bannir
 
 ##### Reason :
+
 ``ban Clyde Bad``
+
             ---
+            
 La raison pour laquelle vous voulez bannir ce membre
 
 
@@ -222,8 +235,11 @@ Oui
 #### Arguments :
 
 ##### \*Number of messages to delete :
+
 ``clear 69``
+
         --
+        
 Le nombre de messages que vous souhaitez supprimer
 
 **/!\ Attention : Une limite de discord empêche de supprimer des messages qui datent de plus de 2 semaines (14j), si des messages ne peuvent pas être supprimés, MultiJS vous donnera une erreur**
@@ -248,13 +264,19 @@ Oui
 #### Arguments :
 
 ##### \*Member :
+
 ``kick @Clyde``
+
        ------
+       
 Le membre que vous souhaitez expulser
 
 ##### Reason :
+
 ``kick @Clyde ;P``
+
               --
+              
 La raison pour laquelle vous voulez expulser ce membre
 
 
@@ -296,8 +318,11 @@ Oui
 #### Arguments :
 
 ##### \*Sondage :
+
 ``poll Qui aime le saucisson ?``
+
                    ---------
+                   
 Le sondage que vous voulez créer
 
 
@@ -320,8 +345,11 @@ Oui
 #### Arguments :
 
 ##### \*Message :
+
 ``say Hello world !``
+
       -------------
+      
 Le message que vous voulez envoyer
 
 
@@ -344,8 +372,11 @@ Oui
 #### Arguments :
 
 ##### \*Member :
+
 ``warn @Clyde``
+
        ------
+       
 Le membre que vous souhaitez avertir
 
 ### -----------------------------
@@ -367,8 +398,11 @@ Oui
 #### Arguments :
 
 ##### \*Bug :
+
 ``bug-report La commande ping affiche 666 :O``
+
              -------------------------------
+             
 Le bug que vous souhaitez signaler
 
 ### -----------------------------
@@ -390,8 +424,11 @@ Oui
 #### Arguments :
 
 ##### \*Calcul :
+
 ``math 10 + 59``
+
        -------
+       
 Le calcul que vous souhaitez effectuer
 
 ### -----------------------------
@@ -429,8 +466,11 @@ Oui
 #### Arguments :
 
 ##### \*Suggestion :
+
 ``suggest Il faudrait que le bot soit hébergé correctement !``
+
           --------------------------------------------------
+          
 La fonctionnalité que vous souhaitez suggérer
 
 ### -----------------------------
@@ -452,8 +492,11 @@ Oui
 #### Arguments :
 
 ##### \*Text :
+
 ``translatefr Welcome to the internet``
+
               -----------------------
+              
 Mot ou phrase à traduire en Français
 
 ### -----------------------------
@@ -475,8 +518,11 @@ Oui
 #### Arguments :
 
 ##### \*Text :
+
 ``ascii Hello world !``
+
         -----------
+        
 Le texte que vous souhaitez transformer en ascii
 
 
@@ -515,13 +561,19 @@ Oui
 #### Arguments :
 
 ##### \*#Channel :
+
 ``hangman #general [text]``
+
           --------
+          
 Salon dans lequel vous souhaitez que le jeu se passe
 
 ##### \*Text :
+
 ``hangman #general Hello world``
+
                    -----------
+                   
 Texte à deviner
 
 ### -----------------------------
@@ -575,8 +627,13 @@ Oui
 #### Arguments :
 
 ##### Adversaire :
+
 ``tictactoe @Clyde``
+
             ------
+            
 Votre adversaire
+
 ## ------------------------------------------------------------------------------------
+
 ## Created by Adloya 2021

@@ -1,12 +1,14 @@
 const Discord = require('discord.js');
 const default_embeds_color = "#90c53f";
+const emojis = require("../../emojis.json");
+
 
 error_color = "#fc1c03"
 
 const error_embed = new Discord.MessageEmbed()
     .setColor(`${error_color}`)
     .setAuthor("MultiJS", "http://adloteam.42web.io/adloteam/MultiJS/MULTI.png")
-    .setTitle(" <:No:850422336007831562> | Erreur !")
+    .setTitle(`${emojis["no"]} | Erreur !`)
     .setFooter("MultiJS - Created by Adloya")
     .setTimestamp();
 
@@ -52,7 +54,7 @@ module.exports.run = (client, message, args) =>{
                 .setAuthor("MultiJS", "http://adloteam.42web.io/adloteam/MultiJS/MULTI.png")
                 .setDescription("Bannissement d'un membre")
                 .setFooter("MultiJS - Created by Adloya")
-                .setTitle("Ban")
+                .setTitle(`${emojis["yes"]} | Membre banni !`)
                 .setTimestamp()
                 .addFields(
                     {name: 'L\'utilisateur suivant a été banni : ', value: user}

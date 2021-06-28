@@ -251,7 +251,6 @@ module.exports.run = (client, message) => {
         else if(!cmd){
             helpemb.setTitle("Liste des commandes")
             helpemb.addFields(
-                // {name: "🧑‍💻 | Développeur", value: `\`\`${p}reload\`\``},
                 {name: "💼 | Administration", value: `\`\`${p}config\`\``},
                 {name: "🎯 | Modération", value: `\`\`${p}ban\`\`, \`\`${p}kick\`\`, \`\`${p}clear\`\`, \`\`${p}nuke\`\`, \`\`${p}say\`\`, \`\`${p}warn\`\`, \`\`${p}poll\`\``},
                 {name: "⚙️ | Outils", value: `\`\`${p}ping\`\`,  \`\`${p}math\`\`, \`\`${p}bug-report\`\`, \`\`${p}suggest\`\``},

@@ -16,8 +16,8 @@ module.exports.run = async(client, message, args) => {
         .setTitle("🗒️ | Liens utiles")
         .setTimestamp()
         .addFields(
-            { name: "💬 | Serveur discord : ", value:"https://discord.com/invite/xVYhVtKBwN"},
-            { name: "📂 | Github du créateur : ", value: "https://github.com/Adloya/"},
+            { name: "💬 | Serveur discord : ", value:"https://discord.gg/mxqVDtGksb"},
+            { name: "📂 | Github de MultiJS : ", value: "https://github.com/Adloya/MultiJS"},
             { name: "🧧 | Inviter le bot sur votre serveur : ", value: "https://discord.com/api/oauth2/authorize?client_id=853578689290698793&permissions=8&scope=bot"}
         );
 

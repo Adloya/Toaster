@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
-const owner_id = "381360415646416896"
-const child = require('child_process');
+const owner_id = "381360415646416896";
+const db = require("../../db.json");
 
 // [1] Activer / [0] désactiver la commande
 const enabled = "0";
@@ -14,36 +14,33 @@ const owner_only_embed = new Discord.MessageEmbed()
     .addField("Seul le développeur du bot peut éxécuter cette commande", "Eh oui !");
 
 module.exports.help = {
-    name: 'cmd',
-    description: 'cmd',
+    name: 'eval',
+    description: 'eval',
     category: 'developer'
 }
 module.exports.run = (client, message, args) => {
-    if(message.author.id === owner_id && enabled === "1") {
-        const command = args.join(" ");
-        if(!command) return message.reply("Spécifiez une commande à éxécuter");
-        child.exec(command, (err, res) => {
-            if (err) return console.log(err);
-            valuef = res.slice(0, 2000)
-            if (!res.slice(0, 2000)) {
-                valuef = "Shell : Ok"
-            }
-            message.channel.send(valuef, { code: "js"})
-        })
+    if(message.author.id === owner_id && enabled === "1"){
+        // const {member, channel, content} = message;
+
+        const result = eval(args.join(" "));
+        if(result === ""){
+            message.channel.send("Veuillez spécifier du code")
+        }else{
+            console.log(result);
+            message.channel.send("```javascript\n" + result + "```")
+        }
     }else{
         if(message.author.id !== owner_id) {
             message.channel.send(owner_only_embed);
             return;
         }else{
             if(enabled === "0"){
-                console.log("La commande développeur 'cmd' est désactivée !")
+                console.log("La commande développeur 'eval' est désactivée !")
                 return;
             }else{
-                console.log("Une erreur inconnue est survenue dans la commande développeur 'cmd'")
+                console.log("Une erreur inconnue est survenue dans la commande développeur 'eval'")
                 return;
             }
         }
     }
-
-    
 }

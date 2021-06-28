@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const default_embeds_color = "#90c53f";
+const emojis = require("../../emojis.json");
 
 module.exports.help = {
     name: 'ping',
@@ -16,8 +17,8 @@ module.exports.run = async (client, message, args) => {
         .setTitle("🏓 | Pong !")
         .setTimestamp()
         .addFields(
-            {name: "Latence du bot :", value: `\`\`${msg.createdTimestamp - message.createdTimestamp}ms\`\``},
-            {name: "Latence de l'API Discord.js : ", value: `\`\`${Math.round(client.ws.ping)}ms\`\``}
+            {name: `${emojis["lag"]} | Latence du bot :`, value: `\`\`${msg.createdTimestamp - message.createdTimestamp}ms\`\``},
+            {name: `${emojis["discordJs"]} | Latence de l'API Discord.js : `, value: `\`\`${Math.round(client.ws.ping)}ms\`\``}
         );
         msg.edit(
             ping_embed

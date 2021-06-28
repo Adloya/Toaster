@@ -55,8 +55,6 @@ Oui
 
 ##### \*Prefix [new prefix]: 
 ``config prefix //``
-
-         ------
          
 Changer le prefixe de votre serveur
 
@@ -96,10 +94,9 @@ Facultatif
 #### Arguments :
 
 ##### Command :
+
 ``help help``
 
-       ----
-       
 La commande sur laquelle vous voulez avoir des informations
 
 
@@ -175,8 +172,6 @@ Oui
 ##### \*Member :
 
 ``userinfo @Clyde``
-
-           ------
            
 Le membre sur lequel vous voulez avoir des informations
 
@@ -203,15 +198,11 @@ Oui
 
 ``ban Clyde``
 
-      -----
-      
 Le membre que vous souhaitez bannir
 
 ##### Reason :
 
 ``ban Clyde Bad``
-
-            ---
             
 La raison pour laquelle vous voulez bannir ce membre
 
@@ -237,8 +228,6 @@ Oui
 ##### \*Number of messages to delete :
 
 ``clear 69``
-
-        --
         
 Le nombre de messages que vous souhaitez supprimer
 
@@ -267,16 +256,12 @@ Oui
 
 ``kick @Clyde``
 
-       ------
-       
 Le membre que vous souhaitez expulser
 
 ##### Reason :
 
 ``kick @Clyde ;P``
 
-              --
-              
 La raison pour laquelle vous voulez expulser ce membre
 
 
@@ -321,8 +306,6 @@ Oui
 
 ``poll Qui aime le saucisson ?``
 
-                   ---------
-                   
 Le sondage que vous voulez créer
 
 
@@ -348,8 +331,6 @@ Oui
 
 ``say Hello world !``
 
-      -------------
-      
 Le message que vous voulez envoyer
 
 
@@ -374,9 +355,7 @@ Oui
 ##### \*Member :
 
 ``warn @Clyde``
-
-       ------
-       
+  
 Le membre que vous souhaitez avertir
 
 ### -----------------------------
@@ -400,9 +379,7 @@ Oui
 ##### \*Bug :
 
 ``bug-report La commande ping affiche 666 :O``
-
-             -------------------------------
-             
+          
 Le bug que vous souhaitez signaler
 
 ### -----------------------------
@@ -426,9 +403,7 @@ Oui
 ##### \*Calcul :
 
 ``math 10 + 59``
-
-       -------
-       
+   
 Le calcul que vous souhaitez effectuer
 
 ### -----------------------------
@@ -468,9 +443,7 @@ Oui
 ##### \*Suggestion :
 
 ``suggest Il faudrait que le bot soit hébergé correctement !``
-
-          --------------------------------------------------
-          
+      
 La fonctionnalité que vous souhaitez suggérer
 
 ### -----------------------------
@@ -494,9 +467,7 @@ Oui
 ##### \*Text :
 
 ``translatefr Welcome to the internet``
-
-              -----------------------
-              
+       
 Mot ou phrase à traduire en Français
 
 ### -----------------------------
@@ -520,9 +491,7 @@ Oui
 ##### \*Text :
 
 ``ascii Hello world !``
-
-        -----------
-        
+     
 Le texte que vous souhaitez transformer en ascii
 
 
@@ -563,17 +532,13 @@ Oui
 ##### \*#Channel :
 
 ``hangman #general [text]``
-
-          --------
-          
+    
 Salon dans lequel vous souhaitez que le jeu se passe
 
 ##### \*Text :
 
 ``hangman #general Hello world``
-
-                   -----------
-                   
+                
 Texte à deviner
 
 ### -----------------------------
@@ -629,9 +594,7 @@ Oui
 ##### Adversaire :
 
 ``tictactoe @Clyde``
-
-            ------
-            
+        
 Votre adversaire
 
 ## ------------------------------------------------------------------------------------

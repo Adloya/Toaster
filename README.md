@@ -11,8 +11,6 @@ MultiJS est développé par [Adloya](https://dsc.bio/Adloya), faisant partie de 
 Sur tous les systèmes d'exploitation, vous aurez besoin de [Node.js](https://nodejs.org/en/)
 
 Sur Windows : utilisez le raccourci "Launch MultiJS" (à la racine du projet) ou directement le script "Launch.cmd" (src/launch.cmd)
-![image](https://user-images.githubusercontent.com/34348778/123604712-62d7b900-d7fb-11eb-9ec8-1a7f88b1ad34.png)
-![image](https://user-images.githubusercontent.com/34348778/123604748-6bc88a80-d7fb-11eb-935c-85fec4c22b7f.png)
 
 
 Via un terminal (windows/mac/linux) : allez dans "src/" avec votre terminal puis démarrez node avec le projet :

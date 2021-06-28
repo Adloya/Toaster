@@ -2,6 +2,8 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const db = require("../../db.json");
 const default_embeds_color = "#90c53f";
+const emojis = require("../../emojis.json");
+
 
 var servers = {};
  
@@ -41,7 +43,7 @@ module.exports = (client, message) => {
         const error_embed = new Discord.MessageEmbed();
         error_embed.setColor(`${error_color}`);
         error_embed.setAuthor("MultiJS", "http://adloteam.42web.io/adloteam/MultiJS/MULTI.png");
-        error_embed.setTitle(" <:No:850422336007831562> |  <:No:850422336007831562> | Erreur !");
+        error_embed.setTitle(`${emojis["no"]} | Erreur !`)
         error_embed.setFooter("MultiJS - Created by Adloya");
         error_embed.setTimestamp();
 

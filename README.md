@@ -36,6 +36,9 @@ Pour des changements MAJEURS, mettez les dans un ISSUE
 
 TESTEZ VOS CONTRIBUTIONS !
 
+## Licence :
+[MIT](https://opensource.org/licenses/MIT)
+
 
 ## Commandes
 

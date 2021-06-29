@@ -16,6 +16,8 @@ Si vous souhaitez le démarrer sur votre propre ordinateur (non-recommandé, pas
 
 Si vous souhaitez l'utiliser en passant par votre propre bot (encore une fois, non-recommandé), merci de laisser toutes les références au développeur original et/ou de le créditer et souvenez vous des caractéristiques de la licence MIT (lien dans la partie licence)
 
+Si vous souhaitez l'éxécuter vous même pour pouvoir rajouter des fonctions ou corriger les bugs, pourquoi pas plûtot passer par les ISSUES, les PULL-REQUESTS, et via les commandes ``suggest`` et ``bug-report`` comme précisé dans la partie CONTRIBUTING
+
 Sur tous les systèmes d'exploitation, vous aurez besoin de [Node.js](https://nodejs.org/en/)
 
 Sur Windows : utilisez le raccourci "Launch MultiJS" (à la racine du projet) ou directement le script "Launch.cmd" (src/launch.cmd)

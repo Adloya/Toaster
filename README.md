@@ -5,7 +5,7 @@ MultiJS est un bot discord développé avec la librairie [DiscordJS](https://dis
 
 Il est disponible en tant que bot public **(Recommandé)**, vous pouvez l'inviter avec [ce lien](https://discord.com/api/oauth2/authorizeclient_id=853578689290698793&permissions=8&scope=bot)
 
-Le serveur discord relié à ce bot est le serveur discord de la Adloteam (lien ci-dessous dans la partie développeur)
+Le serveur discord relié à ce bot est le serveur discord de la **Adloteam** (lien ci-dessous dans la partie développeur)
 
 ## Développeur
 MultiJS est développé par [Adloya](https://dsc.bio/Adloya), faisant partie de la [Adloteam](https://discord.gg/mxqVDtGksb)

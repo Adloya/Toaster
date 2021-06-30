@@ -1,7 +1,7 @@
 
 # MutliJS
 
-MultiJS est un bot discord développé avec la librairie [DiscordJS](https://discord.js.org/#/)
+**MultiJS** est un bot discord développé avec la librairie [DiscordJS](https://discord.js.org/#/)
 
 Il est disponible en tant que bot public **(Recommandé)**, vous pouvez l'inviter avec [ce lien](https://discord.com/api/oauth2/authorizeclient_id=853578689290698793&permissions=8&scope=bot)
 

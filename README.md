@@ -612,6 +612,22 @@ Oui
         
 Votre adversaire
 
+### Joke:
+
+#### Description :
+Raconte une blague pour vous donner le sourire !
+
+#### Utilisation : 
+``joke``
+
+#### Permission : 
+Aucune
+
+#### Arguments ? 
+Non
+
+### -----------------------------
+
 ## ------------------------------------------------------------------------------------
 
 ## Created by Adloya - 2021

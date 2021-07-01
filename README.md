@@ -14,7 +14,7 @@ MultiJS est développé par [Adloya](https://dsc.bio/Adloya), faisant partie de 
 
 Si vous souhaitez le démarrer sur votre propre ordinateur (non-recommandé, passez plûtot par le bot public), commencez par aller dans le fichier config.json, et mettez le token de votre bot + l'ID de votre compte discord.
 
-Si vous souhaitez l'utiliser en passant par votre propre bot (encore une fois, non-recommandé), merci de laisser toutes les références au développeur original et/ou de le créditer et souvenez vous des caractéristiques de la licence MIT (lien dans la partie licence)
+Si vous souhaitez l'utiliser en passant par votre propre bot (encore une fois, non-recommandé), merci de laisser toutes les références au développeur original et/ou de le créditer et souvenez vous des caractéristiques de la licence MIT (lien dans la partie licence) (fichier LICENSE)
 
 Si vous souhaitez l'éxécuter vous même pour pouvoir rajouter des fonctions ou corriger les bugs, pourquoi pas plûtot passer par les ISSUES, les PULL-REQUESTS, et via les commandes ``suggest`` et ``bug-report`` comme précisé dans la partie CONTRIBUTING
 
@@ -47,7 +47,7 @@ Pour des changements MAJEURS, mettez les dans un ISSUE
 TESTEZ VOS CONTRIBUTIONS !
 
 ## Licence :
-[MIT](https://opensource.org/licenses/MIT)
+[MIT](https://opensource.org/licenses/MIT) (fichier LICENSE)
 
 
 ## Commandes

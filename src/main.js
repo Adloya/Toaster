@@ -2,23 +2,13 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const config = require('./config.json');
-// const owner_id = "381360415646416896"
 const db = require("./db.json");
-// const default_embeds_color = "#90c53f";
-// const ytdl = require("ytdl-core");
-// const CronJob = require('cron').CronJob;
-// const fetch = require('node-fetch');
-// const queue = new Map();
-// const search = require('youtube-search');
-// const moment = require('moment')
+
 
 var servers = {};
  
 const fs = require('fs');
-// const { time } = require('console');
-// const { SSL_OP_TLS_BLOCK_PADDING_BUG, UV_FS_O_FILEMAP } = require('constants');
-// const { connect } = require('http2');
-// const { get } = require('http');
+
 
 client.commands = new Discord.Collection();
 

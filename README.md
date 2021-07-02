@@ -1,14 +1,14 @@
 
-# MutliJS
+# Toaster
 
-**MultiJS** est un bot discord développé avec la librairie [DiscordJS](https://discord.js.org/#/)
+**Toaster** est un bot discord développé avec la librairie [DiscordJS](https://discord.js.org/#/)
 
 Il est disponible en tant que bot public **(Recommandé)**, vous pouvez l'inviter avec [ce lien](https://discord.com/api/oauth2/authorizeclient_id=853578689290698793&permissions=8&scope=bot)
 
 Le serveur discord relié à ce bot est le serveur discord de la **Adloteam** (lien ci-dessous dans la partie développeur)
 
 ## Développeur
-MultiJS est développé par [Adloya](https://dsc.bio/Adloya), faisant partie de la [Adloteam](https://discord.gg/mxqVDtGksb)
+Toaster est développé par [Adloya](https://dsc.bio/Adloya), faisant partie de la [Adloteam](https://discord.gg/mxqVDtGksb)
 
 ## Démarrage
 
@@ -20,7 +20,7 @@ Si vous souhaitez l'éxécuter vous même pour pouvoir rajouter des fonctions ou
 
 Sur tous les systèmes d'exploitation, vous aurez besoin de [Node.js](https://nodejs.org/en/)
 
-Sur Windows : utilisez le raccourci "Launch MultiJS" (à la racine du projet) ou directement le script "Launch.cmd" (src/launch.cmd)
+Sur Windows : utilisez le raccourci "Launch Toaster" (à la racine du projet) ou directement le script "Launch.cmd" (src/launch.cmd)
 
 
 Via un terminal (windows/mac/linux) : allez dans "src/" avec votre terminal puis démarrez node avec le projet :
@@ -78,7 +78,7 @@ Changer le prefixe de votre serveur
 ### Botinfo:
 
 #### Description :
-Donne des informations sur MultiJS
+Donne des informations sur Toaster
 
 #### Utilisation : 
 ``botinfo``
@@ -246,7 +246,7 @@ Oui
         
 Le nombre de messages que vous souhaitez supprimer
 
-**/!\ Attention : Une limite de discord empêche de supprimer des messages qui datent de plus de 2 semaines (14j), si des messages ne peuvent pas être supprimés, MultiJS vous donnera une erreur**
+**/!\ Attention : Une limite de discord empêche de supprimer des messages qui datent de plus de 2 semaines (14j), si des messages ne peuvent pas être supprimés, Toaster vous donnera une erreur**
 
 
 ### -----------------------------
@@ -296,7 +296,7 @@ MANAGE_MESSAGES
 #### Arguments ? 
 Non
 
-**/!\ Attention : Une limite de discord empêche de supprimer des messages qui datent de plus de 2 semaines (14j), si des messages ne peuvent pas être supprimés, MultiJS vous donnera une erreur**
+**/!\ Attention : Une limite de discord empêche de supprimer des messages qui datent de plus de 2 semaines (14j), si des messages ne peuvent pas être supprimés, Toaster vous donnera une erreur**
 
 
 ### -----------------------------
@@ -329,7 +329,7 @@ Le sondage que vous voulez créer
 ### Say:
 
 #### Description :
-Fait envoyer un message par MultiJS
+Fait envoyer un message par Toaster
 
 #### Utilisation : 
 ``say [message]``

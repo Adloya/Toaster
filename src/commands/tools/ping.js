@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const default_embeds_color = "#90c53f";
-const emojis = require("../../emojis.json");
+const emojis = require("../../lists/emojis.json")
 
 module.exports.help = {
     name: 'ping',
@@ -11,9 +11,9 @@ module.exports.run = async (client, message, args) => {
     const msg = await message.channel.send(`Pong!`);
     const ping_embed = new Discord.MessageEmbed()
         .setColor(`${default_embeds_color}`)
-        .setAuthor("MultiJS", "http://adloteam.42web.io/adloteam/MultiJS/MULTI.png")
+        .setAuthor("Toaster", "http://adloteam.42web.io/adloteam/Toaster/MULTI.png")
         .setDescription("Latence du bot")
-        .setFooter("MultiJS - Created by Adloya")
+        .setFooter("Toaster - Created by Adloya")
         .setTitle("🏓 | Pong !")
         .setTimestamp()
         .addFields(

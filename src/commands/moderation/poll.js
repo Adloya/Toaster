@@ -14,7 +14,7 @@ module.exports.run = async (client, message, args) => {
         embed.setColor(`${default_embeds_color}`);
         embed.setAuthor("Sondage par : " + message.author.username, message.author.displayAvatarURL());
         embed.setTitle("Sondage");
-        embed.setFooter("MultiJS - Created by Adloya");
+        embed.setFooter("Toaster - Created by Adloya");
         embed.setTimestamp();
         embed.setDescription(args.join(" "))
         embed.addField("Répondez à la question ci-dessus via l'une des réactions se trouvant en dessous du message.",

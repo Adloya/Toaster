@@ -13,10 +13,10 @@ module.exports.run = (client, message, args) => {
     let totalservers = client.guilds.cache.size;
     const botinfo_embed = new Discord.MessageEmbed()
         .setColor(default_embeds_color)
-        .setAuthor("MultiJS", "http://adloteam.42web.io/adloteam/MultiJS/MULTI.png")
-        .setFooter("MultiJS - Created by Adloya")
+        .setAuthor("Toaster", "http://adloteam.42web.io/adloteam/Toaster/MULTI.png")
+        .setFooter("Toaster - Created by Adloya")
         .setTimestamp()
-        .setTitle("🪧 | Informations sur MultiJS")
+        .setTitle("🪧 | Informations sur Toaster")
         .addFields(
             {name: "Mémoire", value: `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB`, inline: true},
             {name: "Uptime", value: `${Math.floor(client.uptime / 1000 / 60).toString()} minutes`, inline: true},

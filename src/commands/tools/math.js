@@ -15,9 +15,9 @@ module.exports.run = (client, message, args) => {
                 {name: "Solution : ", value: math.evaluate(args.join(" "))}
             )
             .setColor(`${default_embeds_color}`)
-            .setAuthor("MultiJS", "http://adloteam.42web.io/adloteam/MultiJS/MULTI.png")
+            .setAuthor("Toaster", "http://adloteam.42web.io/adloteam/Toaster/MULTI.png")
             .setDescription("Résolution de votre calcul")
-            .setFooter("MultiJS - Created by Adloya")
+            .setFooter("Toaster - Created by Adloya")
             .setTitle("🔢 | Calcul")
             .setTimestamp()
         message.channel.send(math_embed);

@@ -17,8 +17,8 @@ module.exports.run = (client, message, args) => {
     const member = message.guild.member(user);
     const usrinfo_embed = new Discord.MessageEmbed()
         .setColor(default_embeds_color)
-        .setAuthor("MultiJS", "http://adloteam.42web.io/adloteam/MultiJS/MULTI.png")
-        .setFooter("MultiJS - Created by Adloya")
+        .setAuthor("Toaster", "http://adloteam.42web.io/adloteam/Toaster/MULTI.png")
+        .setFooter("Toaster - Created by Adloya")
         .setTimestamp()
         .setThumbnail(user.avatarURL)
         .setTitle(`🙍/🙎‍♀️ | Informations sur ${user.username}#${user.discriminator} :`)

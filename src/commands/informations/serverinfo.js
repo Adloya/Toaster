@@ -14,9 +14,9 @@ module.exports.run = (client, message, args) => {
     // let totalrole = message.guild.roles.cache.get('').members.map(member => member.user.tag).length;
     const stats_embed = new Discord.MessageEmbed();
     stats_embed.setColor(`${default_embeds_color}`);
-    stats_embed.setAuthor("MultiJS", "http://adloteam.42web.io/adloteam/MultiJS/MULTI.png");
+    stats_embed.setAuthor("Toaster", "http://adloteam.42web.io/adloteam/Toaster/MULTI.png");
     stats_embed.setDescription("Afficher les informations du serveur / Show the server's Informations");
-    stats_embed.setFooter("MultiJS - Created by Adloya");
+    stats_embed.setFooter("Toaster - Created by Adloya");
     stats_embed.setTitle("Statistiques");
     stats_embed.setTimestamp();
     
@@ -27,6 +27,6 @@ module.exports.run = (client, message, args) => {
     );
     message.channel.send(stats_embed);
     if(db[message.guild.id]["is-testing-server"]) {
-        message.channel.send("This is an official MultiJS server")
+        message.channel.send("This is an official Toaster server")
     }
 }

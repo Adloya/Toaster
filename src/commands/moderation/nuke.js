@@ -1,14 +1,14 @@
 const Discord = require('discord.js');
-const emojis = require("../../emojis.json");
+const emojis = require("../../lists/emojis.json")
 
 
 error_color = "#fc1c03"
 
 const error_embed = new Discord.MessageEmbed()
     .setColor(`${error_color}`)
-    .setAuthor("MultiJS", "http://adloteam.42web.io/adloteam/MultiJS/MULTI.png")
+    .setAuthor("Toaster", "http://adloteam.42web.io/adloteam/Toaster/MULTI.png")
     .setTitle(`${emojis["no"]} | Erreur !`)
-    .setFooter("MultiJS - Created by Adloya")
+    .setFooter("Toaster - Created by Adloya")
     .setTimestamp();
 
 module.exports.help = {

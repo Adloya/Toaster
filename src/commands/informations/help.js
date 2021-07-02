@@ -13,9 +13,9 @@ module.exports.run = (client, message) => {
     let p = db[message.guild.id]["prefix"];
     helpemb = new Discord.MessageEmbed()
         .setColor(default_embeds_color)
-        .setAuthor("MultiJS", "http://adloteam.42web.io/adloteam/MultiJS/MULTI.png")
+        .setAuthor("Toaster", "http://adloteam.42web.io/adloteam/Toaster/MULTI.png")
         .setDescription("Afficher la liste des commandes disponibles / Afficher des informations sur une commande spécifique")
-        .setFooter("MultiJS - Created by Adloya")
+        .setFooter("Toaster - Created by Adloya")
         .setTimestamp();
 
         if(cmd === "clear"){
@@ -198,6 +198,16 @@ module.exports.run = (client, message) => {
             )
             message.channel.send(helpemb)
         }
+        else if(cmd === "joke"){
+            helpemb.setTitle("Joke")
+            helpemb.addFields(
+                {name: "Catégorie :", value: "🎉 | Fun"},
+                {name: "Description :", value: "Une blague pour vous donner le sourire"},
+                {name: "Utilisation :", value: `\`\`${p}joke\`\``},
+                {name: "Permission :", value: "\`\`Aucune\`\`"}
+            )
+            message.channel.send(helpemb)
+        }
         else if(cmd === "math"){
             helpemb.setTitle("Maths")
             helpemb.addFields(
@@ -254,7 +264,7 @@ module.exports.run = (client, message) => {
                 {name: "💼 | Administration", value: `\`\`${p}config\`\``},
                 {name: "🎯 | Modération", value: `\`\`${p}ban\`\`, \`\`${p}kick\`\`, \`\`${p}clear\`\`, \`\`${p}nuke\`\`, \`\`${p}say\`\`, \`\`${p}warn\`\`, \`\`${p}poll\`\``},
                 {name: "⚙️ | Outils", value: `\`\`${p}ping\`\`,  \`\`${p}math\`\`, \`\`${p}bug-report\`\`, \`\`${p}suggest\`\``},
-                {name: "🎉 | Fun", value: `\`\`${p}meme\`\`, \`\`${p}snake\`\`, \`\`${p}hangman\`\`,\`\`${p}tictactoe\`\`,\`\`${p}cat\`\`,\`\`${p}dog\`\``},
+                {name: "🎉 | Fun", value: `\`\`${p}meme\`\`, \`\`${p}joke\`\`, \`\`${p}snake\`\`, \`\`${p}hangman\`\`,\`\`${p}tictactoe\`\`,\`\`${p}cat\`\`,\`\`${p}dog\`\``},
                 {name: "🪧 | Informations", value: `\`\`${p}help\`\`, \`\`${p}links\`\`, \`\`${p}members\`\`,\`\`${p}serverinfo\`\`, \`\`${p}userinfo\`\``}
             )
             message.channel.send(helpemb)

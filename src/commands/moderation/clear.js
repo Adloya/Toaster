@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const db = require("../../db.json");
 const default_embeds_color = "#90c53f";
-const emojis = require("../../emojis.json");
+const emojis = require("../../lists/emojis.json")
 
 
 
@@ -9,9 +9,9 @@ error_color = "#fc1c03"
 
 const error_embed = new Discord.MessageEmbed();
 error_embed.setColor(`${error_color}`);
-error_embed.setAuthor("MultiJS", "http://adloteam.42web.io/adloteam/MultiJS/MULTI.png");
+error_embed.setAuthor("Toaster", "http://adloteam.42web.io/adloteam/Toaster/MULTI.png");
 error_embed.setTitle(`${emojis["no"]} | Erreur !`)
-error_embed.setFooter("MultiJS - Created by Adloya");
+error_embed.setFooter("Toaster - Created by Adloya");
 error_embed.setTimestamp();
 
 
@@ -78,10 +78,10 @@ module.exports.run = (client, message, args) => {
                     const clear_embed = new Discord.MessageEmbed();
                     
                     clear_embed.setColor(`${default_embeds_color}`);
-                    clear_embed.setAuthor("MultiJS", "http://adloteam.42web.io/adloteam/MultiJS/MULTI.png");
+                    clear_embed.setAuthor("Toaster", "http://adloteam.42web.io/adloteam/Toaster/MULTI.png");
                     clear_embed.setDescription("Supprime un nombre donné de messages");
                     clear_embed.setTitle(`${emojis["yes"]} | Messages supprimés !`);
-                    clear_embed.setFooter("MultiJS - Created by Adloya");
+                    clear_embed.setFooter("Toaster - Created by Adloya");
                     clear_embed.setTimestamp();
                     clear_embed.addFields(
                         { name: "Vous avez supprimé :", value: ` ${args[0]} message(s)` },

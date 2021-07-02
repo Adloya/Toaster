@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const default_embeds_color = "#90c53f";
-const emojis = require("../../emojis.json");
+const emojis = require("../../lists/emojis.json")
 
 
 
@@ -8,9 +8,9 @@ error_color = "#fc1c03"
 
 const error_embed = new Discord.MessageEmbed()
     .setColor(`${error_color}`)
-    .setAuthor("MultiJS", "http://adloteam.42web.io/adloteam/MultiJS/MULTI.png")
+    .setAuthor("Toaster", "http://adloteam.42web.io/adloteam/Toaster/MULTI.png")
     .setTitle(`${emojis["no"]} | Erreur !`)
-    .setFooter("MultiJS - Created by Adloya")
+    .setFooter("Toaster - Created by Adloya")
     .setTimestamp();
 
 module.exports.help = {
@@ -51,9 +51,9 @@ module.exports.run = (client, message, args) =>{
                 user.kick();
                 const kick_embed = new Discord.MessageEmbed()
                     .setColor(`${default_embeds_color}`)
-                    .setAuthor("MultiJS", "http://adloteam.42web.io/adloteam/MultiJS/MULTI.png")
+                    .setAuthor("Toaster", "http://adloteam.42web.io/adloteam/Toaster/MULTI.png")
                     .setDescription("Expulsion d'un membre")
-                    .setFooter("MultiJS - Created by Adloya")
+                    .setFooter("Toaster - Created by Adloya")
                     .setTitle(`${emojis["yes"]} | Membre expulsé !`)
                     .setTimestamp()
                     .addFields(

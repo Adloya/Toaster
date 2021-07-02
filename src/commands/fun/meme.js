@@ -12,8 +12,8 @@ module.exports.run = async (client, message, args) => {
     const { caption, image } = await fetch('https://some-random-api.ml/meme').then(response => response.json());
     const meme_embed = new Discord.MessageEmbed()
         .setColor(`${default_embeds_color}`)
-        .setAuthor("MultiJS", "http://adloteam.42web.io/adloteam/MultiJS/MULTI.png")
-        .setFooter("MultiJS - Created by Adloya")
+        .setAuthor("Toaster", "http://adloteam.42web.io/adloteam/Toaster/MULTI.png")
+        .setFooter("Toaster - Created by Adloya")
         .setTitle("🤣 | Meme !")
         .setTimestamp()
         .addFields(

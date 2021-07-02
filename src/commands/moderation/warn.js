@@ -2,15 +2,15 @@ const Discord = require('discord.js');
 const db = require("../../db.json");
 const default_embeds_color = "#90c53f";
 const fs = require('fs');
-const emojis = require("../../emojis.json");
+const emojis = require("../../lists/emojis.json")
 
 error_color = "#fc1c03"
 
 const error_embed = new Discord.MessageEmbed();
 error_embed.setColor(`${error_color}`);
-error_embed.setAuthor("MultiJS", "http://adloteam.42web.io/adloteam/MultiJS/MULTI.png");
+error_embed.setAuthor("Toaster", "http://adloteam.42web.io/adloteam/Toaster/MULTI.png");
 error_embed.setTitle(`${emojis["no"]} | Erreur !`)
-error_embed.setFooter("MultiJS - Created by Adloya");
+error_embed.setFooter("Toaster - Created by Adloya");
 error_embed.setTimestamp();
 
 module.exports.help = {
@@ -36,10 +36,10 @@ module.exports.run = (client, message, args) => {
         user = message.mentions.users.first().id;
         const warn_embed = new Discord.MessageEmbed();
         warn_embed.setColor(`${default_embeds_color}`);
-        warn_embed.setAuthor("MultiJS", "http://adloteam.42web.io/adloteam/MultiJS/MULTI.png");
+        warn_embed.setAuthor("Toaster", "http://adloteam.42web.io/adloteam/Toaster/MULTI.png");
         warn_embed.setDescription("Avertit un utilisateur");
         warn_embed.setTitle(`${emojis["yes"]} | Membre averti !`);
-        warn_embed.setFooter("MultiJS - Created by Adloya");
+        warn_embed.setFooter("Toaster - Created by Adloya");
         warn_embed.setTimestamp();
 
         warn_embed.addFields(
@@ -47,10 +47,10 @@ module.exports.run = (client, message, args) => {
     );
         const finalwarn_embed = new Discord.MessageEmbed();
         finalwarn_embed.setColor(`${default_embeds_color}`);
-        finalwarn_embed.setAuthor("MultiJS", "http://adloteam.42web.io/adloteam/MultiJS/MULTI.png");
+        finalwarn_embed.setAuthor("Toaster", "http://adloteam.42web.io/adloteam/Toaster/MULTI.png");
         finalwarn_embed.setDescription("Le warn de trop.... :/");
         finalwarn_embed.setTitle(`${emojis["yes"]} | Membre averti !`);
-        finalwarn_embed.setFooter("MultiJS - Created by Adloya");
+        finalwarn_embed.setFooter("Toaster - Created by Adloya");
         finalwarn_embed.setTimestamp();
 
         finalwarn_embed.addFields(

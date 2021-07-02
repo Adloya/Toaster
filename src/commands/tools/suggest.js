@@ -15,9 +15,9 @@ module.exports.run = async (client, message, args) => {
 
     const sgEmbed = new Discord.MessageEmbed()
         .setColor(`${default_embeds_color}`)
-        .setAuthor("MultiJS", "http://adloteam.42web.io/adloteam/MultiJS/MULTI.png")
+        .setAuthor("Toaster", "http://adloteam.42web.io/adloteam/Toaster/MULTI.png")
         .setDescription("Suggérer une fonctionnalité")
-        .setFooter("MultiJS - Created by Adloya")
+        .setFooter("Toaster - Created by Adloya")
         .setTitle("❗ | Suggérer")
         .setTimestamp()
         .addFields(

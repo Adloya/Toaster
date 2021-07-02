@@ -36,7 +36,7 @@ module.exports.run = async (client, message, args) => {
         console.log(arg)
         if(!arg[1]){
             error_embed.addFields(
-                { name: 'Une erreur est survenue : ', value: 'Vous devez indiquer une section à configurer' }
+                { name: 'Une erreur est survenue : ', value: 'Vous devez indiquer une section à configurer (faites ``config list`` pour avoir la liste des sections)' }
             );
             message.channel.send(error_embed);
             error_embed.fields = [];
@@ -147,6 +147,29 @@ module.exports.run = async (client, message, args) => {
                     error_embed.fields = [];
                 }
             }
+        }
+        else if(arg[1] == "list"){
+            const configlist_embed = new Discord.MessageEmbed();
+            configlist_embed.setColor(`${default_embeds_color}`);
+            configlist_embed.setAuthor("Toaster", "http://adloteam.42web.io/adloteam/Toaster/MULTI.png");
+            configlist_embed.setDescription("Liste des sections à configurer");
+            configlist_embed.setFooter("Toaster - Created by Adloya");
+            configlist_embed.setTitle(`📜 | Liste des sections à configurer :`);
+            configlist_embed.setTimestamp();
+            configlist_embed.addFields(
+                { name: 'prefix', value: 'Change le préfixe du serveur (``' + db[message.guild.id]["prefix"] + "config prefix [nouveau préfixe]``)"},
+                { name: 'anti-link', value: 'Active/Désactive l\'anti-lien du bot sur ce serveur (``' + db[message.guild.id]["prefix"] + "config anti-link [on/off/status]``)"},
+                { name: 'list', value: 'Donne la liste des sections à configurer (``' + db[message.guild.id]["prefix"] + "config list``)"}
+            );
+            message.channel.send(configlist_embed);
+            antilinks_embed.fields = [];
+        }
+        else{
+            error_embed.addFields(
+                { name: 'Une erreur est survenue : ', value: 'Cette section n\'existe pas. (faites ``config list`` pour avoir la liste des sections)' }
+            );
+            message.channel.send(error_embed);
+            error_embed.fields = [];
         }
     }
 }

@@ -8,7 +8,7 @@ module.exports.help = {
     category: 'tools'
 }
 module.exports.run = async (client, message, args) => {
-    const destinationChannel = "857279971550035968"
+    const destinationChannel = "860538535203438592"
 
     const query = args.join(" ");
     if(!query) return message.reply("Merci de spécifier votre suggestion");

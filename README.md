@@ -1,633 +1,97 @@
 
 # Toaster
 
-**Toaster** est un bot discord développé avec la librairie [DiscordJS](https://discord.js.org/#/)
+## A light, simple, efficient and totally free DiscordBot
+ <a href="https://www.npmjs.com/package/discord.js" target="_BLANK">
+    <img src="https://img.shields.io/badge/discord.js-v12.5.3-blue.svg?logo=npm" alt="discordjs" />
+  </a>
+   <a href="https://www.npmjs.com/package/snakecord" target="_BLANK">
+    <img src="https://img.shields.io/twitter/url?color=Blue&label=Snakecord&logo=Npm&logoColor=blue&style=plastic&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fsnakecord" alt="snakecord" />
+  </a>
+  </a>
+   <a href="https://www.npmjs.com/package/request" target="_BLANK">
+    <img src="https://img.shields.io/twitter/url?color=Blue&label=request&logo=Npm&logoColor=blue&style=plastic&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Frequest" alt="request"/>
+  </a>
+  <a href="https://www.npmjs.com/package/child_process" target="_BLANK">
+    <img src="https://img.shields.io/twitter/url?color=Blue&label=child_process&logo=Npm&logoColor=blue&style=plastic&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fchild_process" alt="child_process"/>
+  </a>
+  <a href="https://www.npmjs.com/package/axios" target="_BLANK">
+    <img src="https://img.shields.io/twitter/url?color=Blue&label=axios&logo=Npm&logoColor=blue&style=plastic&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Faxios" alt="axios"/>
+  </a>
+  <a href="https://www.npmjs.com/package/cron" target="_BLANK">
+    <img src="https://img.shields.io/twitter/url?color=Blue&label=cron&logo=Npm&logoColor=blue&style=plastic&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fcron" alt="cron"/>
+  </a>
+  <a href="https://www.npmjs.com/package/figlet" target="_BLANK">
+    <img src="https://img.shields.io/twitter/url?color=Blue&label=figlet&logo=Npm&logoColor=blue&style=plastic&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Ffiglet" alt="figlet"/>
+  </a>
+  <a href="https://www.npmjs.com/package/fs" target="_BLANK">
+    <img src="https://img.shields.io/twitter/url?color=Blue&label=fs&logo=Npm&logoColor=blue&style=plastic&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Ffs" alt="fs"/>
+  </a>
+  <a href="https://www.npmjs.com/package/mathjs" target="_BLANK">
+    <img src="https://img.shields.io/twitter/url?color=Blue&label=mathjs&logo=Npm&logoColor=blue&style=plastic&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fmathjs" alt=""/>
+  </a>
+  <a href="https://www.npmjs.com/package/moment" target="_BLANK">
+    <img src="https://img.shields.io/twitter/url?color=Blue&label=moment&logo=Npm&logoColor=blue&style=plastic&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fmoment" alt=""/>
+  </a>
+  <a href="https://www.npmjs.com/package/opusscript" target="_BLANK">
+    <img src="https://img.shields.io/twitter/url?color=Blue&label=opusscript&logo=Npm&logoColor=blue&style=plastic&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fopusscript" alt=""/>
+  </a>
+  <a href="https://www.npmjs.com/package/reconlx" target="_BLANK">
+    <img src="https://img.shields.io/twitter/url?color=Blue&label=reconlx&logo=Npm&logoColor=blue&style=plastic&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Freconlx" alt=""/>
+  </a>
+  
+### **Toaster** is a 🇫🇷 French DiscordJS bot designed to be a simple, light and efficient bot
 
-Il est disponible en tant que bot public **(Recommandé)**, vous pouvez l'inviter avec [ce lien](https://discord.com/api/oauth2/authorizeclient_id=853578689290698793&permissions=8&scope=bot)
+Even better ! It is completely free !
 
-Le serveur discord relié à ce bot est le serveur discord de la **Adloteam** (lien ci-dessous dans la partie développeur)
+It is available as a public bot **(Recommended)**, you can add it to your server with [this link](https://discord.com/api/oauth2/authorize?client_id=860476125629382667&permissions=8&scope=bot)
 
-## Développeur
-Toaster est développé par [Adloya](https://dsc.bio/Adloya), faisant partie de la [Adloteam](https://discord.gg/mxqVDtGksb)
+The support channels are in the [Adloteam discord server](https://discord.gg/mxqVDtGksb)
 
-## Démarrage
+> - \*Adloteam is a team of friends that currently develop a game about their college
 
-Si vous souhaitez le démarrer sur votre propre ordinateur (non-recommandé, passez plûtot par le bot public), commencez par aller dans le fichier config.json, et mettez le token de votre bot + l'ID de votre compte discord.
+If you like Toaster you can Leave a star on this repository, contribute to it, follow me. You can also vote and comment for it on [top.gg](https://top.gg/bot/860476125629382667) (when the bot will be approved)
 
-Si vous souhaitez l'utiliser en passant par votre propre bot (encore une fois, non-recommandé), merci de laisser toutes les références au développeur original et/ou de le créditer et souvenez vous des caractéristiques de la licence MIT (lien dans la partie licence) (fichier LICENSE)
+Even better, you can recommend it to your friends and share it !
 
-Si vous souhaitez l'éxécuter vous même pour pouvoir rajouter des fonctions ou corriger les bugs, pourquoi pas plûtot passer par les ISSUES, les PULL-REQUESTS, et via les commandes ``suggest`` et ``bug-report`` comme précisé dans la partie CONTRIBUTING
+## Credits
+Toaster is mainly beeing developed by [Adloya](https://dsc.bio/Adloya) who owns it and who is the head-developer of it, faisant partie de la [Adloteam](https://discord.gg/mxqVDtGksb)
 
-Sur tous les systèmes d'exploitation, vous aurez besoin de [Node.js](https://nodejs.org/en/)
+## Commands
 
-Sur Windows : utilisez le raccourci "Launch Toaster" (à la racine du projet) ou directement le script "Launch.cmd" (src/launch.cmd)
+> - If you want a detailed list of all commands execute the *help* command or look in the commands/ folder
 
+🧑‍💻 - DEVELOPPER : Commands reserved to the owner of the bot (via the owner_id)
 
-Via un terminal (windows/mac/linux) : allez dans "src/" avec votre terminal puis démarrez node avec le projet :
+💼 - ADMINISTRATION : Commands reserved to server administrators, mainly to manage Toaster's settings on your server and manage the most important parts of your server
 
-Windows :
-```batch
-cd src
-node .
-```
+🎯 - MODERATION : Commands to manage/moderate a server, keep your server clean and respectable with this category !
 
-Linux :
-```bash
-cd src/
-node main.js
-```
+📜 - INFORMATIONS : Informations about the bot, the commands, other people and servers
 
+🛠️ - TOOLS : Random utilities and useful commands
+
+🎉 - FUN : Have fun with this category ! 
+
+## Using it
+
+If you want to start it on your own computer (**not recommended**, rather use the public bot) : 
+- Install [node.js](https://nodejs.org/)
+- Install all the requirements and depedencies by running in your favorite terminal : ``npm install``
+- Put the Discord Token and your ID (owner's id) in the Config.js file
+- Run it :
+
+     -If you are on windows you can use the "Launch Toaster.lnk" shortcut
+     
+     -On all systems you can use ``node .`` or ``node main.js`` to run it with your terminal (you must be in the `src/` directory)
 
 
 ## Contributing
-Pour contribuer, utilisez les Pull-requests
+To contribute you can either :
+- Use the ``bug-report``& ``suggest`` commands
+- Or use PULL-REQUESTS or if you want to suggest major changes, use ISSUES
 
-Pour des changements MAJEURS, mettez les dans un ISSUE
-
-TESTEZ VOS CONTRIBUTIONS !
+### TAKE THE TIME TO TEST YOUR CONTRIBUTIONS !!
 
 ## Licence :
-[MIT](https://opensource.org/licenses/MIT) (fichier LICENSE)
-
-
-## Commandes
-
-### Config :
-
-#### Description :
-Permet de configurer certaines fonctions / réglages du bot
-
-#### Utilisation : 
-``config <setting>``
-
-#### Permission : 
-ADMINISTRATOR
-
-#### Arguments ? 
-Oui
-
-#### Arguments :
-
-##### \*Prefix [new prefix]: 
-``config prefix //``
-         
-Changer le prefixe de votre serveur
-
-### -----------------------------
-
-### Botinfo:
-
-#### Description :
-Donne des informations sur Toaster
-
-#### Utilisation : 
-``botinfo``
-
-#### Permission : 
-Aucune
-
-#### Arguments ? 
-Non
-
-
-### -----------------------------
-
-### Help:
-
-#### Description :
-Affiche la liste des commandes OU donne des informations sur une commande
-
-#### Utilisation : 
-``help`` ou ``help <command>``
-
-#### Permission : 
-Aucune
-
-#### Arguments ? 
-Facultatif
-
-#### Arguments :
-
-##### Command :
-
-``help help``
-
-La commande sur laquelle vous voulez avoir des informations
-
-
-### -----------------------------
-
-### Links:
-
-#### Description :
-Donne des liens qui pourraient vous servir
-
-#### Utilisation : 
-``links``
-
-#### Permission : 
-Aucune
-
-#### Arguments ? 
-Non
-
-
-### -----------------------------
-
-### Members:
-
-#### Description :
-Donne le nombre de membres sur le serveur
-
-#### Utilisation : 
-``members``
-
-#### Permission : 
-Aucune
-
-#### Arguments ? 
-Non
-
-
-### -----------------------------
-
-### Serverinfo:
-
-#### Description :
-Donne des informations sur le serveur
-
-#### Utilisation : 
-``serverinfo``
-
-#### Permission : 
-Aucune
-
-#### Arguments ? 
-Non
-
-
-### -----------------------------
-
-### Userinfo:
-
-#### Description :
-Donne des informations sur un membre
-
-#### Utilisation : 
-``userinfo [member]``
-
-#### Permission : 
-Aucune
-
-#### Arguments ? 
-Oui
-
-#### Arguments
-
-##### \*Member :
-
-``userinfo @Clyde``
-           
-Le membre sur lequel vous voulez avoir des informations
-
-
-### -----------------------------
-
-### Ban:
-
-#### Description :
-Bannit un membre
-
-#### Utilisation : 
-``ban [member]``
-
-#### Permission : 
-BAN_MEMBERS
-
-#### Arguments ? 
-Oui
-
-#### Arguments :
-
-##### \*Member :
-
-``ban Clyde``
-
-Le membre que vous souhaitez bannir
-
-##### Reason :
-
-``ban Clyde Bad``
-            
-La raison pour laquelle vous voulez bannir ce membre
-
-
-### -----------------------------
-
-### Clear:
-
-#### Description :
-Supprime un certain nombre de messages
-
-#### Utilisation : 
-``clear [number of messages to delete]``
-
-#### Permission : 
-MANAGE_MESSAGES
-
-#### Arguments ? 
-Oui
-
-#### Arguments :
-
-##### \*Number of messages to delete :
-
-``clear 69``
-        
-Le nombre de messages que vous souhaitez supprimer
-
-**/!\ Attention : Une limite de discord empêche de supprimer des messages qui datent de plus de 2 semaines (14j), si des messages ne peuvent pas être supprimés, Toaster vous donnera une erreur**
-
-
-### -----------------------------
-
-### Kick:
-
-#### Description :
-Expulse un membre de votre serveur
-
-#### Utilisation : 
-``kick [member] [reason]``
-
-#### Permission : 
-KICK_MEMBERS
-
-#### Arguments ? 
-Oui
-
-#### Arguments :
-
-##### \*Member :
-
-``kick @Clyde``
-
-Le membre que vous souhaitez expulser
-
-##### Reason :
-
-``kick @Clyde ;P``
-
-La raison pour laquelle vous voulez expulser ce membre
-
-
-### -----------------------------
-
-### Nuke:
-
-#### Description :
-Vide tous les messages chargés d'un salon
-
-#### Utilisation : 
-``Nuke``
-
-#### Permission : 
-MANAGE_MESSAGES
-
-#### Arguments ? 
-Non
-
-**/!\ Attention : Une limite de discord empêche de supprimer des messages qui datent de plus de 2 semaines (14j), si des messages ne peuvent pas être supprimés, Toaster vous donnera une erreur**
-
-
-### -----------------------------
-
-### Poll:
-
-#### Description :
-Crée un sondage
-
-#### Utilisation : 
-``poll [sondage]``
-
-#### Permission : 
-MANAGE_MESSAGES
-
-#### Arguments ? 
-Oui
-
-#### Arguments :
-
-##### \*Sondage :
-
-``poll Qui aime le saucisson ?``
-
-Le sondage que vous voulez créer
-
-
-### -----------------------------
-
-### Say:
-
-#### Description :
-Fait envoyer un message par Toaster
-
-#### Utilisation : 
-``say [message]``
-
-#### Permission : 
-MANAGE_MESSAGES
-
-#### Arguments ? 
-Oui
-
-#### Arguments :
-
-##### \*Message :
-
-``say Hello world !``
-
-Le message que vous voulez envoyer
-
-
-### -----------------------------
-
-### Warn:
-
-#### Description :
-Ajoute un avertissement à un membre, au bout de 3 avertissements, il est banni
-
-#### Utilisation : 
-``warn [member]``
-
-#### Permission : 
-BAN_MEMBERS
-
-#### Arguments ? 
-Oui
-
-#### Arguments :
-
-##### \*Member :
-
-``warn @Clyde``
-  
-Le membre que vous souhaitez avertir
-
-### -----------------------------
-
-### bug-report:
-
-#### Description :
-Signale un bug au créateur (sur github vous pouvez passer par les ISSUES)
-
-#### Utilisation : 
-``bug-report [bug]``
-
-#### Permission : 
-Aucune
-
-#### Arguments ? 
-Oui
-
-#### Arguments :
-
-##### \*Bug :
-
-``bug-report La commande ping affiche 666 :O``
-          
-Le bug que vous souhaitez signaler
-
-### -----------------------------
-
-### Math:
-
-#### Description :
-Effectue des calculs
-
-#### Utilisation : 
-``math [calcul]``
-
-#### Permission : 
-Aucune
-
-#### Arguments ? 
-Oui
-
-#### Arguments :
-
-##### \*Calcul :
-
-``math 10 + 59``
-   
-Le calcul que vous souhaitez effectuer
-
-### -----------------------------
-
-### Ping:
-
-#### Description :
-Affiche la latence de l'API et la latence du bot
-
-#### Utilisation : 
-``ping``
-
-#### Permission : 
-Aucune
-
-#### Arguments ? 
-Non
-
-### -----------------------------
-
-### Suggest:
-
-#### Description :
-Vous pouvez suggérer des fonctionnalités (sur Github faites le via les Pull-Requests et les ISSUES)
-
-#### Utilisation : 
-``suggest [suggestion]``
-
-#### Permission : 
-Aucune
-
-#### Arguments ? 
-Oui
-
-#### Arguments :
-
-##### \*Suggestion :
-
-``suggest Il faudrait que le bot soit hébergé correctement !``
-      
-La fonctionnalité que vous souhaitez suggérer
-
-### -----------------------------
-
-### Translatefr:
-
-#### Description :
-Traduit du texte de n'importe quelle langue en Français
-
-#### Utilisation : 
-``translatefr [text]``
-
-#### Permission : 
-Aucune
-
-#### Arguments ? 
-Oui
-
-#### Arguments :
-
-##### \*Text :
-
-``translatefr Welcome to the internet``
-       
-Mot ou phrase à traduire en Français
-
-### -----------------------------
-
-### Ascii:
-
-#### Description :
-Transforme du texte en représentation ASCII
-
-#### Utilisation : 
-``ascii [text]``
-
-#### Permission : 
-Aucune
-
-#### Arguments ? 
-Oui
-
-#### Arguments :
-
-##### \*Text :
-
-``ascii Hello world !``
-     
-Le texte que vous souhaitez transformer en ascii
-
-
-### -----------------------------
-
-### Dog:
-
-#### Description :
-Vous donne une photo de chien
-
-#### Utilisation : 
-``dog``
-
-#### Permission : 
-Aucune
-
-#### Arguments ? 
-Non
-
-### -----------------------------
-
-### hangman:
-
-#### Description :
-Jouons au pendu !
-
-#### Utilisation : 
-``hangman [#channel] [text]``
-
-#### Permission : 
-MANAGE_MESSAGES
-
-#### Arguments ? 
-Oui
-
-#### Arguments :
-
-##### \*#Channel :
-
-``hangman #general [text]``
-    
-Salon dans lequel vous souhaitez que le jeu se passe
-
-##### \*Text :
-
-``hangman #general Hello world``
-                
-Texte à deviner
-
-### -----------------------------
-
-### Meme:
-
-#### Description :
-Vous donne un meme !
-
-#### Utilisation : 
-``meme``
-
-#### Permission : 
-Aucune
-
-#### Arguments ? 
-Non
-
-### -----------------------------
-
-### Botinfo:
-
-#### Description :
-Jouons à Snake !
-
-#### Utilisation : 
-``snake``
-
-#### Permission : 
-Aucune
-
-#### Arguments ? 
-Non
-
-### -----------------------------
-
-### Tictactoe:
-
-#### Description :
-Jouons au Morpion !
-
-#### Utilisation : 
-``tictactoe [@adversaire]``
-
-#### Permission : 
-Aucune
-
-#### Arguments ? 
-Oui
-
-#### Arguments :
-
-##### Adversaire :
-
-``tictactoe @Clyde``
-        
-Votre adversaire
-
-### Joke:
-
-#### Description :
-Raconte une blague pour vous donner le sourire !
-
-#### Utilisation : 
-``joke``
-
-#### Permission : 
-Aucune
-
-#### Arguments ? 
-Non
-
-### -----------------------------
-
-## ------------------------------------------------------------------------------------
-
-## Created by Adloya - 2021
+[MIT](https://opensource.org/licenses/MIT) (LICENSE file)

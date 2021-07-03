@@ -11,40 +11,5 @@
         "Terraria",
         "You can suggest things !",
         "You can report bugs !"
-    ],
-    "853612520123269181": {
-        "prefix": ">>",
-        "warn": {
-            "381360415646416896": 1
-        },
-        "is-testing-server": "yes",
-        "anti-join": "on",
-        "anti-link": "off",
-        "language": "Romanian"
-    },
-    "643057941662138368": {
-        "prefix": ">>",
-        "warn": {},
-        "is-testing-server": "yes",
-        "anti-join": "off",
-        "anti-link": "off",
-        "language": "French"
-    },
-    "787696232889450556": {
-        "prefix": ">>",
-        "warn": {},
-        "is-testing-server": "yes",
-        "anti-join": "off",
-        "anti-link": "off",
-        "language": "French"
-    },
-    "845345763411230740": {
-        "prefix": "!",
-        "warn": {
-            "381360415646416896": 1
-        },
-        "anti-join": "off",
-        "anti-link": "off",
-        "language": "French"
-    }
+    ]
 }

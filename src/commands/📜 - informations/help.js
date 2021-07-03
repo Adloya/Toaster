@@ -6,7 +6,7 @@ const emojis = require("../../lists/emojis.json")
 
 error_color = "#fc1c03"
 
-
+// Dynamic help : ✅
 
 module.exports = {
     name: 'help',

@@ -73,7 +73,7 @@ module.exports = {
                 .addField('Prefix : ', `\`\`${prefix}\`\``)
                 .addField('Commande', command.name ? `\`\`${command.name}\`\`` : 'Aucun nom spécifié')
                 .addField('Alias :', command.aliases ? `\`\`${command.aliases.join('` `')}\`\`` : "Aucun alias spécifié")
-                .addField('Utilisation :', command.usage ? `\`\`${prefix}${command.name} ${command.usage}\`\`` : `\`\`${prefix}${getFileInfo.help.name}\`\``)
+                .addField('Utilisation :', command.usage ? `\`\`${prefix}${command.name} ${command.usage}\`\`` : `\`\`${prefix}${command.name}\`\``)
                 .addField('Description :', command.description ? command.description : "Aucune description spécifiée")
                 .setColor(default_embeds_color)
                 .setAuthor("Toaster", "http://adloteam.42web.io/adloteam/Toaster/MULTI.png")

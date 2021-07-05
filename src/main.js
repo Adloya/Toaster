@@ -2,13 +2,11 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const config = require('./config.json');
-// const owner_id = "381360415646416896"
 const db = require("./db.json");
+const language = require('./lists/language.json')
  
 const fs = require('fs');
 error_color = "#fc1c03"
-
-
 
 client.commands = new Discord.Collection();
 
@@ -56,7 +54,7 @@ const loadEvents = (dir = "./events/") => {
 
 function SaveDBs() { // Fonction pour sauvegarder la base de données
     fs.writeFile("./db.json", JSON.stringify(db, null, 4), (err) => {
-        if (err) message.channel.send(`Une erreur est survenue (db_error)`);
+        if (err) message.channel.send(`Une erreur est survenue \`\`(db_error)\`\``);
     });
 }
 

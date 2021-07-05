@@ -9,6 +9,7 @@ module.exports = {
     name: 'userinfo',
     description: 'Shows informations about a member',
     category: '📜 | informations',
+    aliases: ['ui', 'mi', 'memberinfo'],
     run: async (client, message, args) => {
         const guildLang = db[message.guild.id]["language"]
 

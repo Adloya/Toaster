@@ -8,6 +8,7 @@ module.exports = {
     name: 'poll',
     description: 'Create a poll',
     category: '🎯 | moderation',
+    aliases: ['sondage'],
     run: async (client, message, args) => {
     const guildLang = db[message.guild.id]["language"]
 

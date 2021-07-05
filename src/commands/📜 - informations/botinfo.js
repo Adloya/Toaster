@@ -8,6 +8,7 @@ module.exports = {
     name: 'botinfo',
     description: 'Shows the bot\'s informations',
     category: '📜 | informations',
+    aliases: ['toasterinfo', 'bi'],
     run: async (client, message, args) => {
         const guildLang = db[message.guild.id]["language"]
 

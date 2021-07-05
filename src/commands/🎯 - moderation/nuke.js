@@ -15,6 +15,7 @@ module.exports = {
     name: 'nuke',
     description: 'Delete all loaded messages in the channel',
     category: '🎯 | moderation',
+    aliases: ['clearall'],
     run: async (client, message, args) => {
         if(message.member.hasPermission("MANAGE_MESSAGES")) {
             message.channel.messages.fetch().then((results) => {

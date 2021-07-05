@@ -16,6 +16,7 @@ module.exports = {
     name: 'say',
     description: 'The bot is talking ! WOAW',
     category: '🎯 | moderation',
+    aliases: ['repeat', 'echo'],
     run: async (client, message, args) => {
         const guildLang = db[message.guild.id]["language"]
         

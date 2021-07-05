@@ -5,7 +5,9 @@ const default_embeds_color = "#90c53f";
 module.exports = {
     name: 'bug-report',
     description: "Report a bug to the bot owner (@Adloya#1873)",
-    category: '🛠️ | tools',    run: async(client, message, args) => {
+    category: '🛠️ | tools',
+    aliases: ['bug', 'report-bug'],
+    run: async(client, message, args) => {
         const destinationChannel = "860538535203438592"
 
         const query = args.join(" ");

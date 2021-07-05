@@ -14,7 +14,7 @@ module.exports = {
     name: 'help',
     description: "Shows the help menu",
     category: '📜 | informations',
-    aliases: ['h'],
+    aliases: ['h', '?'],
     run: async(client, message, args) => {
         const guildLang = db[message.guild.id]["language"]
 

@@ -239,6 +239,7 @@ module.exports = {
                 configlist_embed.addFields(
                     { name: 'prefix', value: `Changes the server prefix (\`\`` + db[message.guild.id]["prefix"] + "config prefix [new préfix]``)"},
                     { name: 'anti-link', value: 'Enables/Disables the Anti-Link plugin (``' + db[message.guild.id]["prefix"] + "config anti-link [on/off/status]``)"},
+                    { name: 'language', value: 'Changes the language (``' + db[message.guild.id]["prefix"] + "config language [language]``)"},
                     { name: 'list', value: 'Gives a list of all settings you can change (``' + db[message.guild.id]["prefix"] + "config list``)"}
                 );
                 message.channel.send(configlist_embed);

@@ -12,6 +12,7 @@ const { time } = require('console');
 const { SSL_OP_TLS_BLOCK_PADDING_BUG, UV_FS_O_FILEMAP } = require('constants');
 const { connect } = require('http2');
 const { get } = require('http');
+const { columnDependencies } = require('mathjs');
 
 error_color = "#fc1c03"
 
@@ -68,7 +69,8 @@ module.exports = (client, message) => {
     }else{
         const args = message.content.slice(db[message.guild.id]["prefix"].length).split(/ +/);
         const commandName = args.shift().toLowerCase();
-
+        const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+        
         error_color = "#fc1c03"
 
         const error_embed = new Discord.MessageEmbed();
@@ -78,8 +80,8 @@ module.exports = (client, message) => {
         error_embed.setFooter("Toaster - Created by Adloya");
         error_embed.setTimestamp();
 
-        if(!client.commands.has(commandName)) return;
-        const command = client.commands.get(commandName);
+        if (!command) return;
+        // const command = client.commands.get(commandName);
 
         command.run(client, message, args);
     }

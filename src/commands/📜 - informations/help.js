@@ -76,7 +76,7 @@ module.exports = {
                 .setTitle(`${language[guildLang]["InfosCmdTitle"]}`)
                 .addField(`${language[guildLang]["Prefix"]} :`, `\`\`${prefix}\`\``)
                 .addField(`${language[guildLang]["Command"]} :`, command.name ? `\`\`${command.name}\`\`` : `${language[guildLang]["NoCommandNameWasSpecified"]}`)
-                .addField(`${language[guildLang]["Alias"]} :`, command.aliases ? `\`\`${command.aliases.join('` `')}\`\`` : `${language[guildLang]["NoCommandAliasWasSpecified"]}`)
+                .addField(`${language[guildLang]["Alias"]} :`, command.aliases ? `\`\`${command.aliases.join('`` ``')}\`\`` : `${language[guildLang]["NoCommandAliasWasSpecified"]}`)
                 .addField(`${language[guildLang]["Usage"]} :`, command.usage ? `\`\`${prefix}${command.name} ${command.usage}\`\`` : `\`\`${prefix}${command.name}\`\``)
                 .addField(`${language[guildLang]["Description"]} :`, command.description ? command.description : `${language[guildLang]["NoCommandDescWasSpecified"]}`)
                 .setColor(default_embeds_color)

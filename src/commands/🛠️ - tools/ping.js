@@ -1,12 +1,12 @@
 const Discord = require('discord.js');
-const default_embeds_color = "#90c53f";
+const default_embeds_color = require('../../lists/colors.json');
 const emojis = require("../../lists/emojis.json")
 const db = require("../../db.json");
 const language = require("../../lists/language.json");
 
 module.exports = {
     name: 'ping',
-    description: "Pings the bot and the DiscordJS API",
+    description: "Pings the bot and the DiscordJS APIs",
     category: '🛠️ | tools',    run: async(client, message, args) => {
         const guildLang = db[message.guild.id]["language"]
         const msg = await message.channel.send(`Pong!`);

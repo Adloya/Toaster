@@ -1,5 +1,9 @@
 const Discord = require('discord.js');
-const default_embeds_color = "#90c53f";
+const colors = require('../../lists/colors.json');
+const default_embeds_color = colors["default_embed"];
+const error_color = colors["error_embed"];
+const db = require("../../db.json");
+const language = require("../../lists/language.json");
 
 
 module.exports = {
@@ -7,6 +11,8 @@ module.exports = {
     description: "With this command you can suggest a functionnality to the bot owner (@Adloya#1873)",
     category: '🛠️ | tools',    
     run: async(client, message, args) => {
+        const guildLang = db[message.guild.id]["language"]
+
         const destinationChannel = "860538535203438592"
 
         const query = args.join(" ");

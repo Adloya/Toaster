@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const db = require("../../db.json");
-const default_embeds_color = "#90c53f";
+const default_embeds_color = require('../../lists/colors.json');
 const emojis = require("../../lists/emojis.json")
 
 

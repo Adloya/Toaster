@@ -5,8 +5,10 @@ const fs = require('fs');
 const language = require("../../lists/language.json");
 
 
-const default_embeds_color = "#90c53f";
-error_color = "#fc1c03"
+const colors = require('../../lists/colors.json');
+const default_embeds_color = colors["default_embed"];
+const error_color = colors["error_embed"];
+
 
 function SaveDBs() { // Fonction pour sauvegarder la base de données
     fs.writeFile("./db.json", JSON.stringify(db, null, 4), (err) => {

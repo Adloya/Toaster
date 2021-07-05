@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 const emojis = require("../../lists/emojis.json")
+const colors = require('../../lists/colors.json');
+const error_color = colors["error_embed"];
 
-
-error_color = "#fc1c03"
 
 const error_embed = new Discord.MessageEmbed()
     .setColor(`${error_color}`)

@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
 const db = require("../../db.json");
-const default_embeds_color = "#90c53f";
+const colors = require('../../lists/colors.json');
+const default_embeds_color = colors["default_embed"];
+const error_color = colors["error_embed"];
 const language = require("../../lists/language.json");
 const moment = require('moment');
 
@@ -52,10 +54,10 @@ module.exports = {
                 `\u200b`
             ])
             .addField(`Presence`, [
-                `> 🟢 | __Online__ : **${members.filter(member => member.presence.status === 'online').size}**`,
-                `> 🟡 | __Idle__ : **${members.filter(member => member.presence.status === 'idle').size}**`,
-                `> 🔴 | __Do not disturb__ : **${members.filter(member => member.presence.status === 'dnd').size}**`,
-                `> ⚫ | __Offline/Invisible__ : **${members.filter(member => member.presence.status === 'offline').size}**`,
+                `> 🟢 | __Online__ : **${message.guild.members.cache.filter((member) => member.presence.status === 'online').size}**`,
+                `> 🟡 | __Idle__ : **${message.guild.members.cache.filter((member) => member.presence.status === 'idle').size}**`,
+                `> 🔴 | __Do not disturb__ : **${message.guild.members.cache.filter((member) => member.presence.status === 'dnd').size}**`,
+                `> ⚫ | __Offline/Invisible__ : **${message.guild.members.cache.filter((member) => member.presence.status === 'offline').size}**`,
             ])
 
         message.channel.send(si_embed)

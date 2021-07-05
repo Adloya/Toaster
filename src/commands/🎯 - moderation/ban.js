@@ -1,11 +1,12 @@
 const Discord = require('discord.js');
-const default_embeds_color = "#90c53f";
+const colors = require('../../lists/colors.json');
+const default_embeds_color = colors["default_embed"];
+const error_color = colors["error_embed"];
+
 const emojis = require("../../lists/emojis.json")
 const db = require("../../db.json");
 const language = require("../../lists/language.json");
 
-
-error_color = "#fc1c03"
 
 module.exports = {
     name: 'ban',

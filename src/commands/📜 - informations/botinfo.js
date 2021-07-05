@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const db = require("../../db.json");
-const default_embeds_color = "#90c53f";
+const colors = require('../../lists/colors.json');
+const default_embeds_color = colors["default_embed"];
 const language = require("../../lists/language.json");
 
 

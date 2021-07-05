@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const default_embeds_color = "#90c53f";
+const default_embeds_color = require('../../lists/colors.json');
 const fetch = require('node-fetch');
 
 module.exports = {

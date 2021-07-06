@@ -3,6 +3,10 @@ const emojis = require("../../lists/emojis.json")
 const colors = require('../../lists/colors.json');
 const error_color = colors["error_embed"];
 
+const db = require("../../db.json");
+const language = require("../../lists/language.json");
+
+
 
 const error_embed = new Discord.MessageEmbed()
     .setColor(`${error_color}`)
@@ -17,6 +21,8 @@ module.exports = {
     category: '🎯 | moderation',
     aliases: ['clearall'],
     run: async (client, message, args) => {
+        const guildLang = db[message.guild.id]["language"]
+
         if(message.member.hasPermission("MANAGE_MESSAGES")) {
             message.channel.messages.fetch().then((results) => {
                 message.channel.bulkDelete(results).catch(error => {

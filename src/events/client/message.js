@@ -1,8 +1,13 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const db = require("../../db.json");
-const default_embeds_color = require('../../lists/colors.json');
+const colors = require('../../lists/colors.json');
+const default_embeds_color = colors["default_embed"];
+const error_color = colors["error_embed"];
 const emojis = require("../../lists/emojis.json")
+// const language = require("../../lists/language.json");
+
+
 
 
 var servers = {};
@@ -14,7 +19,6 @@ const { connect } = require('http2');
 const { get } = require('http');
 const { columnDependencies } = require('mathjs');
 
-error_color = "#fc1c03"
 
 
 const error_embed = new Discord.MessageEmbed();
@@ -37,6 +41,9 @@ function is_url(str) {
   }
 
 module.exports = (client, message) => {
+
+    const guildLang = db[message.guild.id]["language"]
+
     if(db[message.guild.id]["anti-link"] === "on"){
         if(is_url(message.content) === true) {
             if(message.member.hasPermission("MANAGE_MESSAGES")) return;
@@ -64,6 +71,24 @@ module.exports = (client, message) => {
         message.channel.send(mention_embed)
     }
     if(message.channel.type == "dm") return;
+        // if(!message.author.bot) {
+
+    //     if(message.member.hasPermission("ADMINISTRATOR")){
+    //         return;
+    //     }
+
+    //     var i;
+    //     for(i = 0;i < badwords.length; i++){
+    //         if(message.content.toLowerCase().includes(badwords[i].toLowerCase)){
+    //             message.delete()
+    //             message.channel.send(`${language[guildLang]["NoBadwords"]}`)
+    //             console.log("uh oh")
+    //         }
+    //     }
+    // }else{
+    //     return;
+    // }
+
     if(!message.content.startsWith(db[message.guild.id]["prefix"]) || message.author.bot) {
         return;
     }else{
@@ -71,8 +96,7 @@ module.exports = (client, message) => {
         const commandName = args.shift().toLowerCase();
         const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
         
-        error_color = "#fc1c03"
-
+        
         const error_embed = new Discord.MessageEmbed();
         error_embed.setColor(`${error_color}`);
         error_embed.setAuthor("Toaster", "http://adloteam.42web.io/adloteam/Toaster/MULTI.png");

@@ -18,7 +18,7 @@ module.exports = {
         const error_embed = new Discord.MessageEmbed()
             .setColor(`${error_color}`)
             .setAuthor("Toaster", "http://adloteam.42web.io/adloteam/Toaster/MULTI.png")
-            .setTitle(`${emojis["no"]} | ${language[guildLang]["Error"]} !`)
+            .setTitle(`${emojis["no"]} | ${language[guildLang]["Error"]}`)
             .setFooter("Toaster - Created by Adloya")
             .setTimestamp();
 
@@ -79,7 +79,7 @@ module.exports = {
         }
             else{
                 error_embed.addFields(
-                    { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["ErrorBasic"]}` }
+                    { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["MissingPermission"]}` }
                 );
                 message.channel.send(error_embed);
                 error_embed.fields = [];

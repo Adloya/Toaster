@@ -19,7 +19,7 @@ module.exports = {
         const error_embed = new Discord.MessageEmbed();
         error_embed.setColor(`${error_color}`);
         error_embed.setAuthor("Toaster", "http://adloteam.42web.io/adloteam/Toaster/MULTI.png");
-        error_embed.setTitle(`${emojis["no"]} | ${language[guildLang]["Error"]} !`)
+        error_embed.setTitle(`${emojis["no"]} | ${language[guildLang]["Error"]}`)
         error_embed.setFooter("Toaster - Created by Adloya");
         error_embed.setTimestamp();
 

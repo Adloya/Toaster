@@ -16,12 +16,15 @@
         "Roles": "Rôles",
 
         "InvalidArg": "Argument Invalide",
+        "MissingArg": "Argument manquant",
         "Seconds": "secondes",
         "UsrNotFoundOrUsrNotIndicated": "Utilisateur non trouvé / Vous n'avez pas mentionné d'utilisateur",
         "MissingPermission": "Vous n'avez pas les permissions requises pour éxécuter cette commande",
         "BotMissingPermission": "Je n'ai pas les permissions requises pour éxécuter cette commande",
         "SpecifyChannelMention": "Spécifiez un salon en le mentionnant",
         "SpecifyMember": "Spécifiez un membre en le mentionnant",
+        "AlreadyExists": "existe déja !",
+        "DoesntExists": "n'existe pas !",
 
         "Test": "Oui",
 
@@ -148,7 +151,22 @@
         "Si_botsCount": "Bots",
         "Si_TextChannelsCount": "Cannaux Textuels",
         "Si_VoiceChannelsCount": "Cannaux Vocaux",
-        "Si_BoostCount": "Nombre de boosts"
+        "Si_BoostCount": "Nombre de boosts",
+
+        "AddedBadword": "Ajout d'un mot interdit",
+        "BadwordTitle": "Mot interdit ajouté !",
+        "BadwordAdded": "Le mot suivant a été listé en tant que mot interdit : ",
+        "RemovedBadword": "Retrait d'un mot interdit",
+        "BadwordRemTitle": "Mot interdit retiré !",
+        "BadwordRemoved": "Le mot suivant a été retiré de la liste des mots interdits : ",
+        "NoBadwords": "⛔ | Vous ne pouvez pas envoyer de mots interdits ici",
+        "BadwordListTitle": "⛔ | Liste des mots interdits",
+        "ListBadword": "Voici une liste des mots interdits : ",
+
+        "ComboSearch": "🔍 | Recherche Combo",
+        "CombSearchDesc": "Cliquez sur les liens ci-dessous pour avoir le résultat de votre recherche sur le site indiqué",
+        "MsgTooLong": "Le message à convertir en ASCII ne peut pas faire plus de 17 caractères (Désolé pour les utilisateurs de BetterDiscord)"
+
     },
 
 
@@ -172,11 +190,14 @@
         "Seconds": "seconds",
 
         "InvalidArg": "Invalid Argument",
+        "MissingArg": "Missing Argument",
         "UsrNotFoundOrUsrNotIndicated": "This user wasn't found / You didn't specify an user",
         "MissingPermission": "You don't have the required permission(s) to execute this command",
         "BotMissingPermission": "I do not have the required permission(s) to execute this command",
         "SpecifyChannelMention": "Specify a channel by mentioning it",
         "SpecifyMember": "Specify a member by mentioning it",
+        "AlreadyExists": "already exists !",
+        "DoesntExists": "doesn't exists !",
 
         "Test": "Yes",
 
@@ -304,7 +325,20 @@
         "Si_botsCount": "Bots",
         "Si_TextChannelsCount": "Text Channels",
         "Si_VoiceChannelsCount": "Voice Channels",
-        "Si_BoostCount": "Boost Count"
+        "Si_BoostCount": "Boost Count",
+
+        "AddedBadword": "Adding a badword",
+        "BadwordTitle": "Badword Added !",
+        "BadwordAdded": "The following word was listed as a badword : ",
+        "RemovedBadword": "Removing a badword",
+        "BadwordRemTitle": "Badword Removed !",
+        "BadwordRemoved": "The following word was unlisted from the badwords list : ",
+        "NoBadwords": "⛔ | You aren't allowed to send badwords here !",
+        "BadwordListTitle": "⛔ | Badwords List",
+        "ListBadword": "Here's a list of all the badwords",
+        "ComboSearch": "🔍 | Combo Search",
+        "CombSearchDesc": "Click on the links below to view the results of your search on the indicated site",
+        "MsgTooLong": "The message to convert to ASCII cannot be more than 17 characters in length (Sorry for the BetterDiscord users)"
     },
 
 

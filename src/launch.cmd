@@ -3,7 +3,7 @@
 echo .LOG>latest.log
 echo ==================================>latest.log
 cd src
-mode 15,1
+mode 20,2
 color 7F
 cls
 :running

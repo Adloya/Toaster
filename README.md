@@ -67,7 +67,7 @@ Toaster is mainly beeing developed by [Adloya](https://dsc.bio/Adloya) who owns 
 
 📜 - INFORMATIONS : Informations about the bot, the commands, other people and servers
 
-🛠️ - TOOLS : Random utilities and useful commands
+🛠️ - UTILITIES : Random utilities and useful commands
 
 🎉 - FUN : Have fun with this category ! 
 

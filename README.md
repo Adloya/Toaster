@@ -48,8 +48,6 @@ It is available as a public bot **(Recommended)**, you can add it to your server
 
 The support channels are in the [Adloteam discord server](https://discord.gg/mxqVDtGksb)
 
-> - \*Adloteam is a team of friends that currently develop a game about their college
-
 If you like Toaster you can Leave a star on this repository, contribute to it, follow me. You can also vote and comment for it on [top.gg](https://top.gg/bot/860476125629382667) (when the bot will be approved)
 
 Even better, you can recommend it to your friends and share it !

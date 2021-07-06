@@ -59,7 +59,7 @@ Toaster is mainly beeing developed by [Adloya](https://dsc.bio/Adloya) who owns 
 
 ## Commands
 
-> - If you want a detailed list of all commands execute the *help* command or look in the commands/ folder
+> - If you want a detailed list of all commands execute the *help* command or look up in the commands/ folder
 
 🧑‍💻 - DEVELOPPER : Commands reserved to the owner of the bot (via the owner_id)
 

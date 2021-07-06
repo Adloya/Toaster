@@ -53,7 +53,7 @@ If you like Toaster you can Leave a star on this repository, contribute to it, f
 Even better, you can recommend it to your friends and share it !
 
 ## Credits
-Toaster is mainly beeing developed by [Adloya](https://dsc.bio/Adloya) who owns it and who is the head-developer of it, faisant partie de la [Adloteam](https://discord.gg/mxqVDtGksb)
+Toaster is mainly beeing developed by [Adloya](https://dsc.bio/Adloya) who owns it and who is the head-developer of it, he is a part of the [Adloteam](https://discord.gg/mxqVDtGksb)
 
 ## Commands
 

@@ -44,7 +44,7 @@
 
 Even better ! It is completely free !
 
-It is available as a public bot **(Recommended)**, you can add it to your server with [this link](https://discord.com/api/oauth2/authorize?client_id=860476125629382667&permissions=8&scope=bot)
+It is available as a public bot **(Recommended)**, you can add it to your server with [this link](https://discord.com/oauth2/authorize?client_id=860476125629382667&scope=bot&permissions=4059556959)
 
 The support channels are in the [Adloteam discord server](https://discord.gg/mxqVDtGksb)
 

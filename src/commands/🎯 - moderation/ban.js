@@ -35,7 +35,7 @@ module.exports = {
                 error_embed.addFields(
                     {
                         name: `${language[guildLang]["ErrorBasic"]}`,
-                        value: `${language[guildLang]["BotMissingPermission"]}`
+                        value: `${language[guildLang]["BotMissingPermission"]} (BAN_MEMBERS)`
                     }
                 );
                 message.channel.send(error_embed);
@@ -79,7 +79,7 @@ module.exports = {
         }
             else{
                 error_embed.addFields(
-                    { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["MissingPermission"]}` }
+                    { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["MissingPermission"]} (BAN_MEMBERS)` }
                 );
                 message.channel.send(error_embed);
                 error_embed.fields = [];

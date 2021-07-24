@@ -23,7 +23,7 @@ module.exports = {
             .addFields(
                 { name: `${language[guildLang]["DiscordServer"]}`, value:"[Adloteam](https://discord.gg/mxqVDtGksb)"},
                 { name: `${language[guildLang]["ToasterGithub"]}`, value: "[Adloya/Toaster](https://github.com/Adloya/Toaster)"},
-                { name: `${language[guildLang]["InviteToaster"]}`, value: "[Toaster Invite](https://discord.com/api/oauth2/authorize?client_id=860476125629382667&permissions=8&scope=bot)"}
+                { name: `${language[guildLang]["InviteToaster"]}`, value: "[Toaster Invite](https://discord.com/oauth2/authorize?client_id=860476125629382667&scope=bot&permissions=4059556959)"}
             );
 
 

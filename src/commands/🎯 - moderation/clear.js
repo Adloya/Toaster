@@ -25,76 +25,87 @@ module.exports = {
         if(message.member.hasPermission('MANAGE_MESSAGES')){
             if (!message.member.hasPermission('MANAGE_MESSAGES')) {
                 error_embed.addFields(
-                    { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["MissingPermission"]}` }
+                    { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["MissingPermission"]} (MANAGE_MESSAGES)` }
                 )
                 message.channel.send(error_embed);
                 error_embed.spliceFields();
                 return;
             }else{
-                if (!args[0]) {
+                if (!message.guild.me.hasPermission("MANAGE_MESSAGES")) {
                     error_embed.addFields(
-                        { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["SpecifyMsgNumber"]}` }
-                    )
+                        {
+                            name: `${language[guildLang]["ErrorBasic"]}`,
+                            value: `${language[guildLang]["BotMissingPermission"]} (MANAGE_MESSAGES)`
+                        }
+                    );
                     message.channel.send(error_embed);
-                    error_embed.spliceFields();
-                    return; 
+                    error_embed.fields = [];
                 }else{
-                    if (isNaN(args[0])) {
+                    if (!args[0]) {
                         error_embed.addFields(
-                            { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["IncorrectMsgAmount"]}` }
+                            { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["SpecifyMsgNumber"]}` }
                         )
                         message.channel.send(error_embed);
                         error_embed.spliceFields();
-                        return;
+                        return; 
                     }else{
-                    
-                    if (parseInt(args[0]) <= 0 || parseInt(args[0]) >= 99) {
-                        error_embed.addFields(
-                            { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["NotBetween1&99"]}` }
-                        )
-                        message.channel.send(error_embed);
-                        error_embed.spliceFields();
-                        return;
-                    }else{
-                        message.channel.bulkDelete(parseInt(args[0]) + 1).catch(error => {
+                        if (isNaN(args[0])) {
                             error_embed.addFields(
-                                {
-                                    name: `${language[guildLang]["ErrorBasic"]}`
-,
-                                    value: `${language[guildLang]["DiscordLimitationBulkDel"]}`
-                                },
-                                {
-                                    name: "Error :",
-                                    value: `\`\`${error}\`\``
-                                }
-                            );
+                                { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["IncorrectMsgAmount"]}` }
+                            )
                             message.channel.send(error_embed);
-                            error_embed.fields = [];
+                            error_embed.spliceFields();
                             return;
-                        })
-
-                        const clear_embed = new Discord.MessageEmbed();
+                        }else{
                         
-                        clear_embed.setColor(`${default_embeds_color}`);
-                        clear_embed.setAuthor("Toaster", "http://adloteam.42web.io/adloteam/Toaster/MULTI.png");
-                        clear_embed.setDescription(`${language[guildLang]["ClearDesc"]}`);
-                        clear_embed.setTitle(`${emojis["yes"]} | ${language[guildLang]["MessagesDeleted"]}`);
-                        clear_embed.setFooter("Toaster - Created by Adloya");
-                        clear_embed.setTimestamp();
-                        clear_embed.addFields(
-                            { name: `${language[guildLang]["YouHaveDeleted"]}`, value: ` ${args[0]} message(s)` },
-                            { name: `${language[guildLang]["MessageWillDisapear"]}`, value: `5 ${language[guildLang]["seconds"]}`}
-                        );
+                        if (parseInt(args[0]) <= 0 || parseInt(args[0]) >= 99) {
+                            error_embed.addFields(
+                                { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["NotBetween1&99"]}` }
+                            )
+                            message.channel.send(error_embed);
+                            error_embed.spliceFields();
+                            return;
+                        }else{
+                            message.channel.bulkDelete(parseInt(args[0]) + 1).catch(error => {
+                                error_embed.addFields(
+                                    {
+                                        name: `${language[guildLang]["ErrorBasic"]}`
+    ,
+                                        value: `${language[guildLang]["DiscordLimitationBulkDel"]}`
+                                    },
+                                    {
+                                        name: "Error :",
+                                        value: `\`\`${error}\`\``
+                                    }
+                                );
+                                message.channel.send(error_embed);
+                                error_embed.fields = [];
+                                return;
+                            })
 
-                        message.channel.send(clear_embed).then(msg => {
-                            setTimeout(() => {
-                                msg.delete();
-                            }, 5000);
-                        });
+                            const clear_embed = new Discord.MessageEmbed();
+                            
+                            clear_embed.setColor(`${default_embeds_color}`);
+                            clear_embed.setAuthor("Toaster", "http://adloteam.42web.io/adloteam/Toaster/MULTI.png");
+                            clear_embed.setDescription(`${language[guildLang]["ClearDesc"]}`);
+                            clear_embed.setTitle(`${emojis["yes"]} | ${language[guildLang]["MessagesDeleted"]}`);
+                            clear_embed.setFooter("Toaster - Created by Adloya");
+                            clear_embed.setTimestamp();
+                            clear_embed.addFields(
+                                { name: `${language[guildLang]["YouHaveDeleted"]}`, value: ` ${args[0]} message(s)` },
+                                { name: `${language[guildLang]["MessageWillDisapear"]}`, value: `5 ${language[guildLang]["seconds"]}`}
+                            );
+
+                            message.channel.send(clear_embed).then(msg => {
+                                setTimeout(() => {
+                                    msg.delete();
+                                }, 5000);
+                            });
+                        }
                     }
                 }
-            }
-            }
+                }
+                }
             }
         }
     }

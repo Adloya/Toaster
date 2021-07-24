@@ -122,6 +122,7 @@
         "InfosCmdTitle": "Aide | Informations sur une commande",
 
         "LinksDesc": "Liens qui pourraient vous servir",
+        "DiscordServer": "💬 | Serveur Discord (Support) :",
         "LinksTitle": "🗒️ | Liens utiles",
         "ToasterGithub": "📂 | Github de Toaster : ",
         "InviteToaster": "🧧 | Inviter Toaster sur votre serveur : ",
@@ -296,7 +297,7 @@
 
         "LinksDesc": "Links that can be useful to you",
         "LinksTitle": "🗒️ | Useful links",
-        "DiscordServer": "💬 | Serveur discord :",
+        "DiscordServer": "💬 | Support Discord Server :",
         "ToasterGithub": "📂 | Toaster's Github : ",
         "InviteToaster": "🧧 | Invite Toaster on your server : ",
 

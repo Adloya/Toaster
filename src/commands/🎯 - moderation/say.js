@@ -22,22 +22,33 @@ module.exports = {
         const guildLang = db[message.guild.id]["language"]
         
         if(message.member.hasPermission("MANAGE_MESSAGES")){
-            let sendMessage = message.content.substring(6);
-            if(!sendMessage){
-                error_embed.addFields(
-                    { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["MessageNotSpecified"]}` }
-                )
-                message.channel.send(error_embed);
-                error_embed.spliceFields();
-                return;
-            }
+            // if (!message.guild.me.hasPermission("SEND_MESSAGES")) {
+            //     error_embed.addFields(
+            //         {
+            //             name: `${language[guildLang]["ErrorBasic"]}`,
+            //             value: `${language[guildLang]["BotMissingPermission"]} (SEND_MESSAGES)`
+            //         }
+            //     );
+            //     message.channel.send(error_embed);
+            //     error_embed.fields = [];
+            // }else{
+                let sendMessage = message.content.substring(6);
+                if(!sendMessage){
+                    error_embed.addFields(
+                        { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["MessageNotSpecified"]}` }
+                    )
+                    message.channel.send(error_embed);
+                    error_embed.spliceFields();
+                    return;
+                }
 
-            message.channel.bulkDelete(1);
-            message.channel.send(sendMessage);
-        }
-        else{
+                message.channel.bulkDelete(1);
+                message.channel.send(sendMessage);
+                
+                // }
+        }else{
             error_embed.addFields(
-                { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["MissingPermission"]}` }
+                { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["MissingPermission"]} (MANAGE_MESSAGES)` }
             );
             message.channel.send(error_embed);
             error_embed.spliceFields();

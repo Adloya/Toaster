@@ -24,25 +24,45 @@ module.exports = {
         const guildLang = db[message.guild.id]["language"]
 
         if(message.member.hasPermission("MANAGE_MESSAGES")) {
-            message.channel.messages.fetch().then((results) => {
-                message.channel.bulkDelete(results).catch(error => {
+            if (!message.member.hasPermission('MANAGE_MESSAGES')) {
+                error_embed.addFields(
+                    { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["MissingPermission"]} (MANAGE_MESSAGES)` }
+                )
+                message.channel.send(error_embed);
+                error_embed.spliceFields();
+                return;
+            }else{
+                if (!message.guild.me.hasPermission("MANAGE_MESSAGES")) {
                     error_embed.addFields(
                         {
-                            name: `${language[guildLang]["ErrorBasic"]}`
-,
-                            value: `${language[guildLang]["DiscordLimitationBulkDel"]}`
-                        },
-                        {
-                            name: "Error :",
-                            value: `\`\`${error}\`\``
+                            name: `${language[guildLang]["ErrorBasic"]}`,
+                            value: `${language[guildLang]["BotMissingPermission"]} (MANAGE_MESSAGES)`
                         }
                     );
                     message.channel.send(error_embed);
                     error_embed.fields = [];
-                    return;
-                });
-                message.channel.send('Salon purgé !');
-            })
+                }else{
+                    message.channel.messages.fetch().then((results) => {
+                        message.channel.bulkDelete(results).catch(error => {
+                            error_embed.addFields(
+                                {
+                                    name: `${language[guildLang]["ErrorBasic"]}`
+        ,
+                                    value: `${language[guildLang]["DiscordLimitationBulkDel"]}`
+                                },
+                                {
+                                    name: "Error :",
+                                    value: `\`\`${error}\`\``
+                                }
+                            );
+                            message.channel.send(error_embed);
+                            error_embed.fields = [];
+                            return;
+                        });
+                        message.channel.send('👍');
+                    })
+                }
+            }
         }
     }
 }

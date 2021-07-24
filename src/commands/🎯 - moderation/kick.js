@@ -33,7 +33,7 @@ module.exports = {
 
             if(!message.guild.me.hasPermission("KICK_MEMBERS")) {
                 error_embed.addFields(
-                    { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["BotMissingPermission"]}` }
+                    { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["BotMissingPermission"]} (KICK_MEMBERS)` }
                 );
                 message.channel.send(error_embed);
                 error_embed.fields = [];
@@ -75,7 +75,7 @@ module.exports = {
             }
         else{
             error_embed.addFields(
-                { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["MissingPermissions"]}` }
+                { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["MissingPermissions"]} (KICK_MEMBERS)` }
             );
             message.channel.send(error_embed);
             error_embed.fields = [];

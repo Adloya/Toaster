@@ -19,7 +19,7 @@ const loadCommands = (dir = "./commands/") => {
         for(const file of commands){
             const getFileName = require(`${dir}/${dirs}/${file}`);
             client.commands.set(getFileName.name, getFileName);
-            console.log(`Commande chargée : ${getFileName.name}`)
+            console.log(`⚙️ | Commande chargée => ✅ ${getFileName.name}`)
         };
     });
 };
@@ -29,9 +29,10 @@ client.on("guildCreate", (guild, client) =>{
     db[guild.id] = {};
     db[guild.id]["prefix"] = ">>";
     db[guild.id]["warn"] = {};
-    db[guild.id]["anti-link"] = "off"
-    db[guild.id]["anti-join"] = "off"
-    db[guild.id]["language"] = "English"
+    db[guild.id]["anti-link"] = "off";
+    db[guild.id]["anti-join"] = "off";
+    db[guild.id]["language"] = "English";
+    db[guild.id]["badwords"] = [];
     SaveDBs();
 })
 
@@ -46,7 +47,7 @@ const loadEvents = (dir = "./events/") => {
             const evtName = event.split(".")[0];
             client.on(evtName, evt.bind(null, client))
             // example : client.on("message", (client, message) => {})
-            console.log(`Evenement chargé : ${evtName}`);
+            console.log(`🧪 | Evenement chargé => ✅ ${evtName}`);
             console.log(`=================================================`)
         };
     });

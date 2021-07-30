@@ -93,7 +93,7 @@ module.exports = {
                             clear_embed.setTimestamp();
                             clear_embed.addFields(
                                 { name: `${language[guildLang]["YouHaveDeleted"]}`, value: ` ${args[0]} message(s)` },
-                                { name: `${language[guildLang]["MessageWillDisapear"]}`, value: `5 ${language[guildLang]["seconds"]}`}
+                                { name: `${language[guildLang]["MessageWillDisapear"]}`, value: `5 ${language[guildLang]["Seconds"]}`}
                             );
 
                             message.channel.send(clear_embed).then(msg => {

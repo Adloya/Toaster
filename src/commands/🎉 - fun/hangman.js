@@ -2,6 +2,8 @@ const Discord = require('discord.js');
 const { hangman } = require('reconlx')
 const db = require("../../db.json");
 const language = require("../../lists/language.json");
+const emojis = require("../../lists/emojis.json")
+
 
 module.exports = {
     name: 'hangman',

@@ -38,7 +38,7 @@ module.exports = {
                         { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["MessageNotSpecified"]}` }
                     )
                     message.channel.send(error_embed);
-                    error_embed.spliceFields();
+                    error_embed.fields = [];
                     return;
                 }
 
@@ -51,7 +51,7 @@ module.exports = {
                 { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["MissingPermission"]} (MANAGE_MESSAGES)` }
             );
             message.channel.send(error_embed);
-            error_embed.spliceFields();
+            error_embed.fields = [];
         }
     }
 }

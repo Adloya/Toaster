@@ -41,9 +41,6 @@ module.exports = {
             ])
             .addField(`${language[guildLang]["Si_Statistics_title"]}`, [
                 `> 🎖️ | __${language[guildLang]["Si_roleCount"]}__ : **${roles.length}**`,
-                // `> 😀 | __${language[guildLang]["Si_emojiCount"]} :__ **${emojis.size}**`,
-                // `> 🙂 | __${language[guildLang]["Si_regEmojiCount"]}__ : **${emojis.filter(emoji => !emoji.animated).size}**`,
-                // `> ${emojis["danceblob"]} | __${language[guildLang]["Si_aniEmojiCount"]}__ : **${emojis.filter(emoji => emoji.animated).size}**`,
                 `> 👥 | __${language[guildLang]["Si_memberCount"]}__ : **${message.guild.memberCount}**`,
                 `> 👨 | __${language[guildLang]["Si_humansCount"]}__ : **${members.filter(member => !member.user.bot).size}**`,
                 `> 🤖 | __${language[guildLang]["Si_botsCount"]}__ : **${members.filter(member => member.user.bot).size}**`,

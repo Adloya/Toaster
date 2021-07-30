@@ -24,5 +24,7 @@ module.exports = {
             msg.edit(
                 ping_embed
             )
+
+            
     }
 }

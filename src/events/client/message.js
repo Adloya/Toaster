@@ -5,7 +5,7 @@ const colors = require('../../lists/colors.json');
 const default_embeds_color = colors["default_embed"];
 const error_color = colors["error_embed"];
 const emojis = require("../../lists/emojis.json")
-// const language = require("../../lists/language.json");
+const language = require("../../lists/language.json");
 
 
 
@@ -44,50 +44,50 @@ module.exports = (client, message) => {
 
     const guildLang = db[message.guild.id]["language"]
 
+    if(db[message.guild.id]["anti-mention"] === "on"){
+        if(message.content.includes("<@") || message.content.includes("<@!") || message.content.includes("<@&")){
+            if(!message.member.hasPermission("MANAGE_MESSAGES")) {
+                message.delete();
+                error_embed.addFields(
+                    { name: language[guildLang]["NoMentions"], value: language[guildLang]["NoMentions2"] }
+                );
+                message.channel.send(error_embed)
+                error_embed.fields = [];
+            }
+        }
+    }
+
     if(db[message.guild.id]["anti-link"] === "on"){
         if(is_url(message.content) === true) {
-            if(message.member.hasPermission("MANAGE_MESSAGES")) return;
-            message.delete();
-            error_embed.addFields(
-                { name: 'Vous ne pouvez pas envoyer de liens sur ce serveur : ', value: 'Les liens ont étés désactivés par un administrateur' }
-            );
-            message.channel.send(error_embed);
-            error_embed.fields = [];
+            if(message.member.hasPermission("MANAGE_MESSAGES")) {
+                message.delete();
+                error_embed.addFields(
+                    { name: 'Vous ne pouvez pas envoyer de liens sur ce serveur : ', value: 'Les liens ont étés désactivés par un administrateur' }
+                );
+                message.channel.send(error_embed);
+                error_embed.fields = [];
+            }
         }
     }
     if (message.mentions.has(client.user.id)) {
-        if(message.content.includes("@here") || message.content.includes("@everyone")) return;
-        const mention_embed = new Discord.MessageEmbed()
-            .setColor(default_embeds_color)
-            .setAuthor("Toaster", "http://adloteam.42web.io/adloteam/Toaster/MULTI.png")
-            .setFooter("Toaster - Created by Adloya")
-            .setTimestamp()
-            .setTitle(`Bonjour ! Je suis Toaster !`)
-            .setDescription(`Voici des informations sur moi`)
-            .addFields(
-                { name: `Prefix sur ce serveur : `, value: "``" + db[message.guild.id]["prefix"] + "``" },
-                { name: `Commande d'aide : `, value: '``' + db[message.guild.id]["prefix"] + "help``" }
-            )
-        message.channel.send(mention_embed)
+        if(!message.content.includes("@here") || message.content.includes("@everyone")){
+            if(!db[message.guild.id]["anti-mention"] === "on"){
+                const mention_embed = new Discord.MessageEmbed()
+                    .setColor(default_embeds_color)
+                    .setAuthor("Toaster", "http://adloteam.42web.io/adloteam/Toaster/MULTI.png")
+                    .setFooter("Toaster - Created by Adloya")
+                    .setTimestamp()
+                    .setTitle(`Bonjour ! Je suis Toaster !`)
+                    .setDescription(`Voici des informations sur moi`)
+                    .addFields(
+                        { name: `Prefix sur ce serveur : `, value: "``" + db[message.guild.id]["prefix"] + "``" },
+                        { name: `Commande d'aide : `, value: '``' + db[message.guild.id]["prefix"] + "help``" }
+                    )
+                message.channel.send(mention_embed)
+            }
+        }
     }
     if(message.channel.type == "dm") return;
-        // if(!message.author.bot) {
-
-    //     if(message.member.hasPermission("ADMINISTRATOR")){
-    //         return;
-    //     }
-
-    //     var i;
-    //     for(i = 0;i < badwords.length; i++){
-    //         if(message.content.toLowerCase().includes(badwords[i].toLowerCase)){
-    //             message.delete()
-    //             message.channel.send(`${language[guildLang]["NoBadwords"]}`)
-    //             console.log("uh oh")
-    //         }
-    //     }
-    // }else{
-    //     return;
-    // }
 
     if(!message.content.startsWith(db[message.guild.id]["prefix"]) || message.author.bot) {
         return;
@@ -105,8 +105,6 @@ module.exports = (client, message) => {
         error_embed.setTimestamp();
 
         if (!command) return;
-        // const command = client.commands.get(commandName);
-
         command.run(client, message, args);
     }
 }

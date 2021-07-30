@@ -2,10 +2,11 @@ const Discord = require('discord.js');
 const owner_id = "381360415646416896";
 const db = require("../../db.json");
 const language = require("../../lists/language.json");
+const emojis = require("../../lists/emojis.json")
 
 
 // [1] Activer / [0] désactiver la commande
-const enabled = "0";
+const enabled = "1";
 
 module.exports = {
     name: 'eval',

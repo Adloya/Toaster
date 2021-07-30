@@ -2,6 +2,8 @@ const Discord = require('discord.js');
 const SnakeGame = require('snakecord');
 const db = require("../../db.json");
 const language = require("../../lists/language.json");
+const emojis = require("../../lists/emojis.json")
+
 
 const snakeGame = new SnakeGame({
 

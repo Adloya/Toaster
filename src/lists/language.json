@@ -39,6 +39,7 @@
         "SpecifyConfig1.2": "pour avoir la liste des options)",
         "SpecifyConfig2": "Vous devez indiquer un prefix",
         "SpecifyConfig3": "Précisez si vous voulez activer l'anti-link, le désactiver ou voir son état (on / off / status)",
+        "SpecifyConfig4": "Précisez si vous voulez activer l'anti-mention, le désactiver ou voir son état (on / off / status)",
         "ChangePrefixTitle": "Changement du préfix",
         "PrefixUpdatedSuccess": "Le prefix suivant a bien été sauvegardé : ",
         "PrefixUpdatedTitle": "Préfixe changé !",
@@ -46,6 +47,8 @@
         "ActivatingAntiLink": "Activation de l'anti-lien",
         "AntiLinkStatus": "Status de l'anti-lien : ",
         "DisablingAntiLink": "Désactivation de l'anti-lien",
+        "NoLinks": "Vous ne pouvez pas envoyer de liens sur ce serveur",
+        "NoLinks2": "Les liens ont été désactivés par un administrateur (seuls les membres avec la permission MANAGE_MESSAGES peuvent en envoyer)",
         
         "ListSettings": "Liste des options configurables",
         
@@ -99,10 +102,11 @@
         "MessageNotSpecified": "Vous n'avez pas spécifié de message a envoyer",
 
         "WarnCount": "a reçu un avertissement, il en a maintenant",
-        "FinalWarn": "${user} a été warn une fois de trop.",
+        "FinalWarn": "a été warn une fois de trop.",
         "FinalWarnDesc": "Ce fut le warn de trop.",
         "FinalWarnTitle": "Membre averti",
         "WarnDesc": "Avertit un utilisateur",
+        "WarnTitle": "Membre Averti !",
 
         "LangDoesntExist1": "Cette langue n'est pas disponible. (faites ",
         "LangDoesntExist1.2": " pour avoir la liste des langues disponibles)",
@@ -126,6 +130,7 @@
         "LinksTitle": "🗒️ | Liens utiles",
         "ToasterGithub": "📂 | Github de Toaster : ",
         "InviteToaster": "🧧 | Inviter Toaster sur votre serveur : ",
+        "VoteTopGG": "💗 | Voter pour Toaster sur Top.gg",
 
         "InfoOn": "Informations sur",
         "UsrNameOnServer": "Pseudo sur ce serveur",
@@ -167,7 +172,15 @@
         "ComboSearch": "🔍 | Recherche Combo",
         "CombSearchDesc": "Cliquez sur les liens ci-dessous pour avoir le résultat de votre recherche sur le site indiqué",
         "MsgTooLong": "Le message à convertir en ASCII ne peut pas faire plus de 17 caractères (Désolé pour les utilisateurs de BetterDiscord)"
+,
+        
+        "ActivatingAntiMention": "Activation de l'anti-lien",
+        "AntiMentionStatus": "Status de l'anti-lien : ",
+        "DisablingAntiMention": "Désactivation de l'anti-lien",
+        "NoMentions": "Vous ne pouvez pas mentionner sur ce serveur",
+        "NoMentions2": "Les mentions ont été désactivées par un administrateur (seuls les membres avec la permission MANAGE_MESSAGES peuvent en envoyer)",
 
+        "PollNotSpecified": "Vous n'avez pas spécifié de sondage à envoyer"
     },
 
 
@@ -213,6 +226,7 @@
         "SpecifyConfig1.2": "to have a list of the settings you can change)",
         "SpecifyConfig2": "You must specify a prefix",
         "SpecifyConfig3": "Specify : Do you want to enable / disable or view the status of the anti-link ? (on / off / status)",
+        "SpecifyConfig4": "Specify : Do you want to enable / disable or view the status of the anti-mention ? (on / off / status)",
         "ChangePrefixTitle": "Prefix change",
         "PrefixUpdatedSuccess": "The following prefix was saved : ",
         "PrefixUpdatedTitle": "Prefix updated !",
@@ -220,6 +234,8 @@
         "ActivatingAntiLink": "Enabling Anti-link plugin",
         "AntiLinkStatus": "Antilink Status : ",
         "DisablingAntiLink": "Disabling Anit-link plugin",
+        "NoLinks": "You cannot send links on this server",
+        "NoLinks2": "Links have been disabled by an administrator (only members who have the MANAGE_MESSAGES permission can send links)",
 
         "ListSettings": "List of settings you can configure",
 
@@ -270,10 +286,10 @@
         "Poll": "Poll",
         "RespondToThePoll": "Respond to the following question with the reactions below.",
 
-        "MessageNotSpecified": "You must enter a message to send",
+        "MessageNotSpecified": "You didn't specified a message to send",
 
         "WarnCount": "received a warn, now he has",
-        "FinalWarn": "${user} received his final warning, he has been kicked",
+        "FinalWarn": "received his final warning, he has been kicked",
         "FinalWarnDesc": "It was the final-warn.",
         "WarnTitle": "Member Warned",
         "WarnDesc": "Warns a member",
@@ -300,6 +316,7 @@
         "DiscordServer": "💬 | Support Discord Server :",
         "ToasterGithub": "📂 | Toaster's Github : ",
         "InviteToaster": "🧧 | Invite Toaster on your server : ",
+        "VoteTopGG": "💗 | Vote for Toaster on Tog.gg",
 
         "InfoOn": "Informations about",
         "UsrNameOnServer": "Username on this server",
@@ -339,7 +356,15 @@
         "ListBadword": "Here's a list of all the badwords",
         "ComboSearch": "🔍 | Combo Search",
         "CombSearchDesc": "Click on the links below to view the results of your search on the indicated site",
-        "MsgTooLong": "The message to convert to ASCII cannot be more than 17 characters in length (Sorry for the BetterDiscord users)"
+        "MsgTooLong": "The message to convert to ASCII cannot be more than 17 characters in length (Sorry for the BetterDiscord users)",
+        
+        "ActivatingAntiMention": "Enabling Anti-link plugin",
+        "AntiMentionStatus": "Antilink Status : ",
+        "DisablingAntiMention": "Disabling Anit-link plugin",
+        "NoMentions": "You cannot send mentions on this server",
+        "NoMentions2": "Mentions have been disabled by an administrator (only members who have the MANAGE_MESSAGES permission can send mentions)",
+
+        "PollNotSpecified": "You didn't specified a poll to send"
     },
 
 

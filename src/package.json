@@ -1,5 +1,5 @@
 {
-  "name": "Toaster",
+  "name": "toaster",
   "version": "1.0.0",
   "description": "Bot discordJS créé par Adloya",
   "main": "main.js",
@@ -8,7 +8,7 @@
     "start": "node main.js"
   },
   "author": "Adloya",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@iamtraction/google-translate": "^1.1.2",
     "axios": "^0.21.1",
@@ -24,9 +24,11 @@
     "moment": "^2.29.1",
     "node-fetch": "^2.6.1",
     "opusscript": "^0.0.8",
+    "pm2": "^5.1.0",
     "reconlx": "^1.3.2",
     "request": "^2.88.2",
     "snakecord": "^1.0.7",
+    "sourcebin": "^4.2.5",
     "youtube-search": "^1.1.6",
     "ytdl-core": "^4.8.2"
   }

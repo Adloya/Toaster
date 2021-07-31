@@ -17,6 +17,8 @@ module.exports = {
         const guildLang = db[message.guild.id]["language"];
         const input = args.join("%20");
 
+        if(!input) return message.channel.send(language[guildLang]["MissingArg"]);
+
         const google_res = `https://www.google.com/search?q=${input}`;
         const duckduckgo_res = `https://duckduckgo.com/?q=${input}`;
         const bing_res = `https://www.bing.com/search?q=${input}`;

@@ -31,14 +31,23 @@ module.exports = {
             .setFooter("Toaster - Created by Adloya")
             .setTimestamp()
             .setThumbnail(user.avatarURL)
-            .setTitle(`🙍/🙎‍♀️ | ${language[guildLang]["InfoOn"]} ${user.username}#${user.discriminator} :`)
-            .addField('ID :', `${user.id}`, true)
-            .addField(`${language[guildLang]["UsrnameOnServer"]} :`, `${member.nickname ? member.nickname : 'Aucun'}`, true)
-            .addField(`${language[guildLang]["AccountCreatedAt"]} :`, `${moment(member.user.createdTimestamp).format('LT')} ${moment(member.user.createdTimestamp).format('LL')} : ${moment(member.user.createdTimestamp).fromNow()}`, true)
-            .addField(`${language[guildLang]["ServerJoinedAt"]}`, `${moment.utc(member.joinedAt).format('dddd, MMMM, Do YYYY, HH:mm:ss')}`, true)
-            .addField(`${language[guildLang]["Status"]}`, `${member.user.presence.status}`, true)
-            .addField(`${language[guildLang]["Statut"]}`, `${user.presence.game ? user.presence.game.name : 'Aucun'}`, true)
-            .addField(`${language[guildLang]["Roles"]}`, `${roles.length}: ${roles.length < 10 ? roles.join(', ') : roles.length > 10 ? this.client.utils.trimArray(roles) : "None"}`)
+            .setTitle(`👨‍👦 | ${language[guildLang]["InfoOn"]} ${user.username}#${user.discriminator} :`)
+
+            .addField('Identity', [
+                `> 🆔 | __ID__ : **${user.id}**`,
+                `> 🏷️ | __${language[guildLang]["UsrNameOnServer"]}__ : **${member.nickname ? member.nickname : 'None'}**`
+            ])
+            .addField('Timestamps', [
+                `> 💫 | __${language[guildLang]["AccountCreatedAt"]}__ : **${moment(member.user.createdTimestamp).format('LT')} ${moment(member.user.createdTimestamp).format('LL')} : ${moment(member.user.createdTimestamp).fromNow()}**`,
+                `> ➡️ | __${language[guildLang]["ServerJoinedAt"]}__ : **${moment.utc(member.joinedAt).format('dddd, MMMM, Do YYYY, HH:mm:ss')}**`
+            ])
+            .addField('Online Appearence', [
+                `> 👤 | __${language[guildLang]["Status"]}__ : **${member.user.presence.status}**`,
+                `> 🕹️ | __${language[guildLang]["Statut"]}__ : **${user.presence.game ? user.presence.game.name : 'None'}**`
+            ])
+            .addField('Server', [
+                `> 🔖 | __${language[guildLang]["Roles"]}__ : **${roles.length}: ${roles.length < 10 ? roles.join(', ') : roles.length > 10 ? this.client.utils.trimArray(roles) : "None"}**`
+            ])
         
         message.channel.send(usrinfo_embed);
     }

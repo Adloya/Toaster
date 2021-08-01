@@ -19,7 +19,7 @@ const snakeGame = new SnakeGame({
 
 module.exports = {
     name: 'snake',
-    description: 'Playing snake like in the Discord 404 page',
+    description: 'Enables you to play snake like in the Discord 404 page',
     category: '🎉 - Fun',
     run: async(client, message, args) => {
         const guildLang = db[message.guild.id]["language"]

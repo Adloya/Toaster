@@ -7,7 +7,7 @@ const language = require("../../lists/language.json");
 
 module.exports = {
     name: 'joke',
-    description: 'Send French Jokes',
+    description: 'Sends a joke, for you... to laugh. O B V I O U S',
     category: '🎉 - Fun',
     run: async(client, message, args) => {
         const guildLang = db[message.guild.id]["language"]

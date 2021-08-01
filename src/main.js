@@ -1,4 +1,19 @@
-// Tout le code ORIGINAL de ce bot (éxepté celui des technologies externes (ex. Lavalink)) appartient à Adloya#1873
+//        _______ _______ ______ _   _ _______ _____ ____  _   _  
+//     /\|__   __|__   __|  ____| \ | |__   __|_   _/ __ \| \ | | 
+//    /  \  | |     | |  | |__  |  \| |  | |    | || |  | |  \| | 
+//   / /\ \ | |     | |  |  __| | . ` |  | |    | || |  | | . ` | 
+//  / ____ \| |     | |  | |____| |\  |  | |   _| || |__| | |\  | 
+// /_/    \_\_|     |_|  |______|_| \_|  |_|  |_____\____/|_| \_| 
+                                                                
+                                                                
+//  ____          _____     _____ ____  _____  ______             
+// |  _ \   /\   |  __ \   / ____/ __ \|  __ \|  ____|            
+// | |_) | /  \  | |  | | | |   | |  | | |  | | |__               
+// |  _ < / /\ \ | |  | | | |   | |  | | |  | |  __|              
+// | |_) / ____ \| |__| | | |___| |__| | |__| | |____             
+// |____/_/    \_\_____/   \_____\____/|_____/|______|            
+
+
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const config = require('./config.json');
@@ -19,7 +34,7 @@ const loadCommands = (dir = "./commands/") => {
         for(const file of commands){
             const getFileName = require(`${dir}/${dirs}/${file}`);
             client.commands.set(getFileName.name, getFileName);
-            console.log(`⚙️ | Commande chargée => ✅ ${getFileName.name}`)
+            console.log(`📁  | Commande chargée => ✅ ${getFileName.name}`)
         };
     });
 };
@@ -47,7 +62,7 @@ const loadEvents = (dir = "./events/") => {
             const evtName = event.split(".")[0];
             client.on(evtName, evt.bind(null, client))
             // example : client.on("message", (client, message) => {})
-            console.log(`🧪 | Evenement chargé => ✅ ${evtName}`);
+            console.log(`🎇  | Evenement chargé => ✅ ${evtName}`);
             console.log(`=================================================`)
         };
     });

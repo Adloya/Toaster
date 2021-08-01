@@ -23,8 +23,10 @@
         "BotMissingPermission": "Je n'ai pas les permissions requises pour éxécuter cette commande",
         "SpecifyChannelMention": "Spécifiez un salon en le mentionnant",
         "SpecifyMember": "Spécifiez un membre en le mentionnant",
+        "SpecifyRole": "Spécifiez un role en le mentionnant",
         "AlreadyExists": "existe déja !",
         "DoesntExists": "n'existe pas !",
+        "SmDurationNotSpecified": "Spécifiez une intervalle de temps pour le mode lent ou faites ``slowmode off`` pour le désactiver",
 
         "Test": "Oui",
 
@@ -171,7 +173,9 @@
 
         "ComboSearch": "🔍 | Recherche Combo",
         "CombSearchDesc": "Cliquez sur les liens ci-dessous pour avoir le résultat de votre recherche sur le site indiqué",
-        "MsgTooLong": "Le message à convertir en ASCII ne peut pas faire plus de 17 caractères (Désolé pour les utilisateurs de BetterDiscord)"
+        "MsgTooLong": "Le message à convertir en ASCII ne peut pas faire plus de 17 caractères (Désolé pour les utilisateurs de BetterDiscord)",
+        "MsgTooShort": "Le message à convertir en ASCII ne peut pas faire moins de 1 caractère"
+
 ,
         
         "ActivatingAntiMention": "Activation de l'anti-lien",
@@ -180,7 +184,23 @@
         "NoMentions": "Vous ne pouvez pas mentionner sur ce serveur",
         "NoMentions2": "Les mentions ont été désactivées par un administrateur (seuls les membres avec la permission MANAGE_MESSAGES peuvent en envoyer)",
 
-        "PollNotSpecified": "Vous n'avez pas spécifié de sondage à envoyer"
+        "PollNotSpecified": "Vous n'avez pas spécifié de sondage à envoyer",
+
+        "NoArg1Lock": "Merci d'utiliser ``lock this_channel [@role]`` ou ``lock channel [#salon] [@role]",
+        "ChannelLockedPt1": "Le salon <#",
+        "ChannelLockedPt2": "> a été vérouillé pour le role <@&",
+        "ChannelLockedEnd": ">",
+        "EndNoteLock": "NOTES : Si le changement n'est pas pris en compte, verrifiez que Toaster se trouve au dessus des roles que vous voulez verrouiller dans les paramètres du serveur, de plus il se peut que l'emoji 🔐 n'apparaisse pas a cause d'une limite de discord",
+        "Locked": "Vérrouillé",
+        "NoArg1UnLock": "Merci d'utiliser ``unlock this_channel [@role]`` ou ``unlock channel [#salon] [@role]",
+        "ChannelUnLockedPt1": "Le salon <#",
+        "ChannelUnLockedPt2": "> a été dévérouillé pour le role <@&",
+        "ChannelUnLockedEnd": ">",
+        "EndNoteUnLock": "NOTES : Si le changement n'est pas pris en compte, verrifiez que Toaster se trouve au dessus des roles que vous voulez déverrouiller dans les paramètres du serveur, de plus il se peut que l'emoji 🔐 ne disparaisse pas a cause d'une limite de discord",
+        "UnLocked": "Dévérrouillé",
+
+        "SlowmodeDesc": "Modification du mode lent",
+        "Slowmode1": "Le mode lent a été fixé à : "
     },
 
 
@@ -210,8 +230,10 @@
         "BotMissingPermission": "I do not have the required permission(s) to execute this command",
         "SpecifyChannelMention": "Specify a channel by mentioning it",
         "SpecifyMember": "Specify a member by mentioning it",
+        "SpecifyRole": "Specify a role by mentionning it",
         "AlreadyExists": "already exists !",
         "DoesntExists": "doesn't exists !",
+        "SmDurationNotSpecified": "Specify a duration (in seconds) for the slow mode or do ``slowmode off`` to turn it off",
 
         "Test": "Yes",
 
@@ -357,6 +379,7 @@
         "ComboSearch": "🔍 | Combo Search",
         "CombSearchDesc": "Click on the links below to view the results of your search on the indicated site",
         "MsgTooLong": "The message to convert to ASCII cannot be more than 17 characters in length (Sorry for the BetterDiscord users)",
+        "MsgTooShort": "The message to convert to ASCII cannot be less than 1 character in length",
         
         "ActivatingAntiMention": "Enabling Anti-link plugin",
         "AntiMentionStatus": "Antilink Status : ",
@@ -364,7 +387,17 @@
         "NoMentions": "You cannot send mentions on this server",
         "NoMentions2": "Mentions have been disabled by an administrator (only members who have the MANAGE_MESSAGES permission can send mentions)",
 
-        "PollNotSpecified": "You didn't specified a poll to send"
+        "PollNotSpecified": "You didn't specified a poll to send",
+
+        "NoArg1Lock": "You must use ``lock this_channel [@role]`` or ``lock channel [#channel] [@role]",
+        "ChannelLockedPt1": "The <#",
+        "ChannelLockedPt2": "> channel has been locked for this role : <@&",
+        "ChannelLockedEnd": ">",
+        "EndNoteLock": "NOTES : If the channel isn't locked, or certain changes aren't applied, check if Toaster's role is above the role you want to lock, there's a chance that the 🔐 emoji won't appear because of a limitation of discord",
+        "Locked": "Locked !",
+        
+        "SlowmodeDesc": "Slowmode modification",
+        "Slowmode1": "Slowmode has been set to : "
     },
 
 

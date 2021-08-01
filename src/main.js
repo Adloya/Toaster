@@ -13,6 +13,8 @@
 // | |_) / ____ \| |__| | | |___| |__| | |__| | |____             
 // |____/_/    \_\_____/   \_____\____/|_____/|______|            
 
+// https://starecat.com/content/wp-content/uploads/when-you-read-some-incredibly-bad-code-thinking-what-a-moron-wrote-this-but-halfway-through-it-starts-to-become-familiar-obi-wan-kenobi-well-of-course-i-know-him-hes-me.jpg
+
 
 const Discord = require('discord.js');
 const client = new Discord.Client();

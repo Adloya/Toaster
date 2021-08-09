@@ -19,6 +19,6 @@ module.exports = {
                 {name:"\u200b", value: caption}
             )
             .setImage(image);
-            message.channel.send(meme_embed)
+            message.channel.send({embeds : [meme_embed]})
     }
 }

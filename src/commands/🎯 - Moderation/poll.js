@@ -16,21 +16,22 @@ const error_embed = new Discord.MessageEmbed()
 
 module.exports = {
     name: 'poll',
-    description: 'Create a poll',
+    description: 'Creates a poll',
     category: '🎯 - Moderation',
     aliases: ['sondage'],
     run: async (client, message, args) => {
     const guildLang = db[message.guild.id]["language"]
 
-        if (!message.guild.me.hasPermission("ADD_REACTIONS")) {
+        if (!message.guild.me.permissions.has("ADD_REACTIONS")) {
             error_embed.addFields(
                 {
                     name: `${language[guildLang]["ErrorBasic"]}`,
                     value: `${language[guildLang]["BotMissingPermission"]} (ADD_REACTIONS)`
                 }
             );
-            message.channel.send(error_embed);
+            message.channel.send({embeds : [error_embed]});
             error_embed.fields = [];
+            return;
         }else{
             if(args.join(" ") === " " || args.join(" ") === "" || args.join(" ") === " ") {
                 error_embed.addFields(
@@ -39,8 +40,9 @@ module.exports = {
                         value: `${language[guildLang]["PollNotSpecified"]}`
                     }
                 );
-                message.channel.send(error_embed);
+                message.channel.send({embeds : [error_embed]});
                 error_embed.fields = [];
+                return;
             }else{
                 embed = new Discord.MessageEmbed();
                 embed.setColor(`${default_embeds_color}`);
@@ -57,7 +59,7 @@ module.exports = {
                     🔴 - No / Non
                     `
                 )
-                const poll = await message.channel.send(embed);
+                const poll = await message.channel.send({embeds : [embed]});
                 await poll.react("🟢");
                 await poll.react("🟠");
                 await poll.react("🔵");

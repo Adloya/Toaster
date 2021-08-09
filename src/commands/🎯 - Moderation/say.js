@@ -21,8 +21,8 @@ module.exports = {
     run: async (client, message, args) => {
         const guildLang = db[message.guild.id]["language"]
         
-        if(message.member.hasPermission("MANAGE_MESSAGES")){
-            // if (!message.guild.me.hasPermission("SEND_MESSAGES")) {
+        if(message.member.permissions.has("MANAGE_MESSAGES")){
+            // if (!message.guild.me.permissions.has("SEND_MESSAGES")) {
             //     error_embed.addFields(
             //         {
             //             name: `${language[guildLang]["ErrorBasic"]}`,

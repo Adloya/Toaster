@@ -22,6 +22,14 @@ module.exports = {
     description: 'Enables you to play snake like in the Discord 404 page',
     category: '🎉 - Fun',
     run: async(client, message, args) => {
+
+        on = 0
+
+    
+    if(on != 1){
+        message.channel.send("This command was disabled because of discord.js v13's changes, it will be back but different")
+    }
+
         const guildLang = db[message.guild.id]["language"]
 
         const error_embed = new Discord.MessageEmbed();
@@ -31,14 +39,14 @@ module.exports = {
         error_embed.setFooter("Toaster - Created by Adloya");
         error_embed.setTimestamp();
 
-        if (!message.guild.me.hasPermission("ADD_REACTIONS")) {
+        if (!message.guild.me.permissions.has("ADD_REACTIONS")) {
             error_embed.addFields(
                 {
                     name: `${language[guildLang]["ErrorBasic"]}`,
                     value: `${language[guildLang]["BotMissingPermission"]}`
                 }
             );
-            message.channel.send(error_embed);
+            message.channel.send({embeds : [error_embed]});
             error_embed.fields = [];
         }
         return snakeGame.newGame(message);

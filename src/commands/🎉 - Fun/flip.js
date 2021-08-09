@@ -15,7 +15,6 @@ module.exports = {
 
         const choices = ["Heads", "Tails"]
         let flipped = choices[Math.floor(Math.random() * choices.length)]
-        console.log(flipped)
 
         if(flipped === "Heads"){
             flippedtxt = `${language[guildLang]["Heads"]}`
@@ -24,7 +23,7 @@ module.exports = {
                 flippedtxt = `${language[guildLang]["Tails"]}`
             }else{
                 if(flipped !== "Tails" && flipped !== "Heads"){
-                    console.log("Euh? W h a t ?")
+                    return;
                 }
             }
         }
@@ -48,6 +47,6 @@ module.exports = {
             }
         }
 
-            message.channel.send(flip_embed)
+            message.channel.send({ embeds: [flip_embed] })
     }
 }

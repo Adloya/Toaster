@@ -14,8 +14,7 @@ module.exports = {
     description: 'Transforms Text to ASCII',
     category: '🎉 - Fun',
     usage: "[text]",
-    run: async(client, message) => {
-        let args = message.content.trim().split(/ +/g)
+    run: async(client, message, args) => {
         const guildLang = db[message.guild.id]["language"]
 
         if(args.join(" ").length > 17){

@@ -9,7 +9,7 @@ const language = require("../../lists/language.json");
 
 module.exports = {
     name: 'clear',
-    description: 'Delete a given amount of messages',
+    description: 'Deletes a given amount of messages',
     category: '🎯 - Moderation',
     run: async (client, message, args) => {
         const guildLang = db[message.guild.id]["language"]
@@ -22,30 +22,30 @@ module.exports = {
         error_embed.setTimestamp();
 
 
-        if(message.member.hasPermission('MANAGE_MESSAGES')){
-            if (!message.member.hasPermission('MANAGE_MESSAGES')) {
+        if(message.member.permissions.has('MANAGE_MESSAGES')){
+            if (!message.member.permissions.has('MANAGE_MESSAGES')) {
                 error_embed.addFields(
                     { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["MissingPermission"]} (MANAGE_MESSAGES)` }
                 )
-                message.channel.send(error_embed);
+                message.channel.send({embeds : [error_embed]});
                 error_embed.spliceFields();
                 return;
             }else{
-                if (!message.guild.me.hasPermission("MANAGE_MESSAGES")) {
+                if (!message.guild.me.permissions.has("MANAGE_MESSAGES")) {
                     error_embed.addFields(
                         {
                             name: `${language[guildLang]["ErrorBasic"]}`,
                             value: `${language[guildLang]["BotMissingPermission"]} (MANAGE_MESSAGES)`
                         }
                     );
-                    message.channel.send(error_embed);
+                    message.channel.send({embeds : [error_embed]});
                     error_embed.fields = [];
                 }else{
                     if (!args[0]) {
                         error_embed.addFields(
                             { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["SpecifyMsgNumber"]}` }
                         )
-                        message.channel.send(error_embed);
+                        message.channel.send({embeds : [error_embed]});
                         error_embed.spliceFields();
                         return; 
                     }else{
@@ -53,7 +53,7 @@ module.exports = {
                             error_embed.addFields(
                                 { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["IncorrectMsgAmount"]}` }
                             )
-                            message.channel.send(error_embed);
+                            message.channel.send({embeds : [error_embed]});
                             error_embed.spliceFields();
                             return;
                         }else{
@@ -62,7 +62,7 @@ module.exports = {
                             error_embed.addFields(
                                 { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["NotBetween1&99"]}` }
                             )
-                            message.channel.send(error_embed);
+                            message.channel.send({embeds : [error_embed]});
                             error_embed.spliceFields();
                             return;
                         }else{
@@ -78,7 +78,7 @@ module.exports = {
                                         value: `\`\`${error}\`\``
                                     }
                                 );
-                                message.channel.send(error_embed);
+                                message.channel.send({embeds : [error_embed]});
                                 error_embed.fields = [];
                                 return;
                             })
@@ -96,7 +96,7 @@ module.exports = {
                                 { name: `${language[guildLang]["MessageWillDisapear"]}`, value: `5 ${language[guildLang]["Seconds"]}`}
                             );
 
-                            message.channel.send(clear_embed).then(msg => {
+                            message.channel.send({embeds : [clear_embed]}).then(msg => {
                                 setTimeout(() => {
                                     msg.delete();
                                 }, 5000);

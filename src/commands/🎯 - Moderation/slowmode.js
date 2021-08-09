@@ -19,21 +19,22 @@ module.exports = {
     description: 'Sets the slow mode at a certain value',
     category: '🎯 - Moderation',
     aliases: ['slow', "slow-mode"],
+    usage: "[Duration]",
     run: async (client, message, args) => {
     const guildLang = db[message.guild.id]["language"]
-    if (!message.member.hasPermission('MANAGE_CHANNELS')) {
+    if (!message.member.permissions.has('MANAGE_CHANNELS')) {
         error_embed.addFields(
             { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["MissingPermission"]} (MANAGE_MESSAGES)` }
         );
-        message.channel.send(error_embed);
+        message.channel.send({embeds : [error_embed]});
         error_embed.fields = [];
         return;
         }else{
-            if (!message.guild.me.hasPermission("MANAGE_CHANNELS")) {
+            if (!message.guild.me.permissions.has("MANAGE_CHANNELS")) {
                 error_embed.addFields(
                     { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["BotMissingPermission"]} (MANAGE_MESSAGES)` }
                 );
-                message.channel.send(error_embed);
+                message.channel.send({embeds : [error_embed]});
                 error_embed.fields = [];
                 return;
             }else{
@@ -48,7 +49,7 @@ module.exports = {
                             value: `${language[guildLang]["MissingArg"]}`
                         }
                     );
-                    message.channel.send(error_embed);
+                    message.channel.send({embeds : [error_embed]});
                     error_embed.fields = [];
                     return;
                 }else{
@@ -59,7 +60,7 @@ module.exports = {
                                 value: `${language[guildLang]["SmDurationNotSpecified"]}`
                             }
                         );
-                        message.channel.send(error_embed);
+                        message.channel.send({embeds : [error_embed]});
                         error_embed.fields = [];
                         return;
                     }else{
@@ -80,8 +81,8 @@ module.exports = {
                             .addFields(
                                 { name: `${language[guildLang]["Slowmode1"]}`, value: `${durationtxt}`}
                             );
-                        message.channel.send(slow_embed)
-                    }
+                            message.channel.send({embeds : [slow_embed]});
+                        }
                 }
             }
         }

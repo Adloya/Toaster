@@ -9,9 +9,16 @@ const emojis = require("../../lists/emojis.json")
 
 module.exports = {
     name: 'lock',
-    description: 'locks a channel',
+    description: 'Locks a channel',
     category: '🎯 - Moderation',
+    usage: "[this_channel/channel**] **#channel @role",
     run: (client, message, args) =>{
+    on = 0
+
+    
+    if(on != 1){
+        message.channel.send("This command was disabled because of discord.js v13's changes, it will be back but different, it will not have some packages.")
+    }
     const guildLang = db[message.guild.id]["language"]
     const error_embed = new Discord.MessageEmbed();
     error_embed.setColor(`${error_color}`);
@@ -20,19 +27,19 @@ module.exports = {
     error_embed.setFooter("Toaster - Created by Adloya");
     error_embed.setTimestamp();
 
-    if (!message.member.hasPermission('MANAGE_CHANNELS') || !message.member.hasPermission('MANAGE_ROLES')) {
+    if (!message.member.permissions.has('MANAGE_CHANNELS') || !message.member.permissions.has('MANAGE_ROLES')) {
         error_embed.addFields(
             { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["MissingPermission"]}` }
         );
-        message.channel.send(error_embed);
+        message.channel.send({embeds : [error_embed]});
         error_embed.fields = [];
         return;
     }else{
-        if (!message.guild.me.hasPermission("MANAGE_CHANNELS") || !message.member.hasPermission('MANAGE_ROLES')) {
+        if (!message.guild.me.permissions.has("MANAGE_CHANNELS") || !message.member.permissions.has('MANAGE_ROLES')) {
             error_embed.addFields(
                 { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["BotMissingPermission"]}` }
             );
-            message.channel.send(error_embed);
+            message.channel.send({embeds : [error_embed]});
             error_embed.fields = [];
             return;
         }else{
@@ -41,7 +48,7 @@ module.exports = {
                 error_embed.addFields(
                     { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["NoArg1Lock"]}` }
                 );
-                message.channel.send(error_embed);
+                message.channel.send({embeds : [error_embed]});
                 error_embed.fields = [];
                 return;
             }
@@ -51,7 +58,7 @@ module.exports = {
                         error_embed.addFields(
                             { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["SpecifyRole"]}` }
                         );
-                        message.channel.send(error_embed);
+                        message.channel.send({embeds : [error_embed]});
                         error_embed.fields = [];
                         return;
                     }
@@ -66,7 +73,7 @@ module.exports = {
                             error_embed.addFields(
                                 { name: `${language[guildLang]["ErrorBasic"]}`, value: error }
                             );
-                            message.channel.send(error_embed);
+                            message.channel.send({embeds : [error_embed]});
                             error_embed.fields = [];
                             return;
                         })
@@ -77,9 +84,9 @@ module.exports = {
                             .setTitle("🔐 | Lock !")
                             .setTimestamp()
                             .addFields(
-                                { name: `${emojis["yes"]} ${language[guildLang]["Locked"]}`, value: `${language[guildLang]["ChannelLockedPt1"]}` + message.channel + `${language[guildLang]["ChannelLockedPt2"]}` + role + `${language[guildLang]["ChannelLockedEnd"]}`}
+                                { name: `🔐 | ${language[guildLang]["Locked"]}`, value: `${language[guildLang]["ChannelLockedPt1"]}` + message.channel + `${language[guildLang]["ChannelLockedPt2"]}` + role + `${language[guildLang]["ChannelLockedEnd"]}`}
                             );
-                            message.channel.send(lock_embed)
+                            message.channel.send({embeds : [lock_embed]});
                             return;
                     }
                 }
@@ -89,7 +96,7 @@ module.exports = {
                             error_embed.addFields(
                                 { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["SpecifyChannelMention"]}` }
                             );
-                            message.channel.send(error_embed);
+                            message.channel.send({embeds : [error_embed]});
                             error_embed.fields = [];
                             return;
                         }
@@ -97,7 +104,7 @@ module.exports = {
                             error_embed.addFields(
                                 { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["SpecifyRole"]}` }
                             );
-                            message.channel.send(error_embed);
+                            message.channel.send({embeds : [error_embed]});
                             error_embed.fields = [];
                             return;
                         }
@@ -120,9 +127,9 @@ module.exports = {
                                 .setTitle("🔐 | Lock !")
                                 .setTimestamp()
                                 .addFields(
-                                    { name: `${emojis["yes"]} ${language[guildLang]["Locked"]}`, value: `${language[guildLang]["ChannelLockedPt1"]}` + channeltolock + `${language[guildLang]["ChannelLockedPt2"]}` + role + `${language[guildLang]["ChannelLockedEnd"]}`}
+                                    { name: `🔐 | ${language[guildLang]["Locked"]}`, value: `${language[guildLang]["ChannelLockedPt1"]}` + channeltolock + `${language[guildLang]["ChannelLockedPt2"]}` + role + `${language[guildLang]["ChannelLockedEnd"]}`}
                                 );
-                                message.channel.send(lock_embed)
+                                message.channel.send({embeds : [lock_embed]});
                                 return;
                             }
                         }

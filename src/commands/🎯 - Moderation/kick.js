@@ -21,7 +21,7 @@ module.exports = {
             .setFooter("Toaster - Created by Adloya")
             .setTimestamp();
 
-        if(message.member.hasPermission("KICK_MEMBERS")){
+        if(message.member.permissions.has("KICK_MEMBERS")){
             let arg = message.content.trim().split(/ +/g);
 
             user = message.mentions.members.first();
@@ -31,11 +31,11 @@ module.exports = {
                 reason = "Aucune raison donnée"
             }
 
-            if(!message.guild.me.hasPermission("KICK_MEMBERS")) {
+            if(!message.guild.me.permissions.has("KICK_MEMBERS")) {
                 error_embed.addFields(
                     { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["BotMissingPermission"]} (KICK_MEMBERS)` }
                 );
-                message.channel.send(error_embed);
+                message.channel.send({embeds : [error_embed]});
                 error_embed.fields = [];
             }
 
@@ -47,16 +47,14 @@ module.exports = {
                         value: `${language[guildLang]["UsrNotFoundOrUsrNotIndicated"]}`
                     }
                 );
-                message.channel.send(error_embed);
+                message.channel.send({embeds : [error_embed]});
                 error_embed.fields = [];
             }
                 else{
                     user.kick().catch((err) => {
-                        error_embed.addFields(
-                            { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["AdminOrHigher"]}` }
-                        );
+                        error_embed.addField(`${language[guildLang]["ErrorBasic"]}`, `${language[guildLang]["AdminOrHigher"]}`);
                         message.channel.bulkDelete(1);
-                        message.channel.send(error_embed);
+                        message.channel.send({embeds : [error_embed]});
                         error_embed.fields = [];
                         return;
                     });
@@ -67,17 +65,13 @@ module.exports = {
                         .setFooter("Toaster - Created by Adloya")
                         .setTitle(`${emojis["yes"]} | ${language[guildLang]["MemberKickTitle"]} !`)
                         .setTimestamp()
-                        .addFields(
-                            { name: `${language[guildLang]["MemberKick"]}`, value: user }
-                        );
-                    message.channel.send(kick_embed)
-                }
+                        .addField(`${language[guildLang]["MemberKick"]}`, `${user}`)
+                    message.channel.send({embeds : [kick_embed]});
+                    }
             }
         else{
-            error_embed.addFields(
-                { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["MissingPermissions"]} (KICK_MEMBERS)` }
-            );
-            message.channel.send(error_embed);
+            error_embed.addField(`${language[guildLang]["ErrorBasic"]}`, `${language[guildLang]["MissingPermissions"]} (KICK_MEMBERS)`);
+            message.channel.send({embeds : [error_embed]});
             error_embed.fields = [];
         }
     }

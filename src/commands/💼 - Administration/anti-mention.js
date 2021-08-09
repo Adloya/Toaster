@@ -16,7 +16,7 @@ function SaveDBs() { // Fonction pour sauvegarder la base de données
             error_embed.addFields(
                 {name: `Une erreur est survenue : `, value: `${err}`}
             )
-            message.channel.send(error_embed);
+            message.channel.send({embeds : [error_embed]});
             error_embed.fields = [];
         }
     });
@@ -42,13 +42,13 @@ module.exports = {
         error_embed.setTimestamp();
 
 
-        if(message.member.hasPermission("ADMINISTRATOR")) {
+        if(message.member.permissions.has("ADMINISTRATOR")) {
 
             if(!arg[1]){
                 error_embed.addFields(
                     { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["SpecifyConfig4"]}` }
                 );
-                message.channel.send(error_embed);
+                message.channel.send({embeds : [error_embed]});
                 error_embed.fields = [];
                 return;
             }else{
@@ -65,7 +65,7 @@ module.exports = {
                         antilinks_embed.addFields(
                             { name: `${language[guildLang]["AntiMentionStatus"]}`, value: `${language[guildLang]["Activated"]}`}
                         );
-                        message.channel.send(antilinks_embed)
+                        message.channel.send({embeds : [antilinks_embed]});
                         await message.react("✅");
                         antilinks_embed.fields = [];
                 }
@@ -82,7 +82,7 @@ module.exports = {
                         antilinks_embed.addFields(
                             { name: `${language[guildLang]["AntiMentionStatus"]}`, value: `${language[guildLang]["Disabled"]}`}
                         );
-                        message.channel.send(antilinks_embed)
+                        message.channel.send({embeds : [antilinks_embed]});
                         await message.react("✅");
                         antilinks_embed.fields = [];
                 }
@@ -98,7 +98,7 @@ module.exports = {
                         antilinks_embed.addFields(
                             { name: `${language[guildLang]["AntiMentionStatus"]}`, value: `${language[guildLang]["Disabled"]}`}
                         );
-                        message.channel.send(antilinks_embed)
+                        message.channel.send({embeds : [antilinks_embed]});
                         antilinks_embed.fields = [];
                     }
                     if(db[message.guild.id]["anti-mention"] === "on"){
@@ -112,7 +112,7 @@ module.exports = {
                         antilinks_embed.addFields(
                             { name: `${language[guildLang]["AntiMentionStatus"]}`, value: `${language[guildLang]["Activated"]}`}
                         );
-                        message.channel.send(antilinks_embed)
+                        message.channel.send({embeds : [antilinks_embed]});
                         antilinks_embed.fields = [];
                     }
                 }
@@ -120,7 +120,7 @@ module.exports = {
                     error_embed.addFields(
                         { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["InvalidArgument"]} (on / off / status)` }
                     );
-                    message.channel.send(error_embed);
+                    message.channel.send({embeds : [error_embed]});
                     error_embed.fields = [];
                     return;
                 }

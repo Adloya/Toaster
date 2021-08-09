@@ -4,12 +4,21 @@ const default_embeds_color = colors["default_embed"];
 const error_color = colors["error_embed"];
 const db = require("../../db.json");
 const language = require("../../lists/language.json");
+const emojis = require("../../lists/emojis.json")
+
 
 module.exports = {
     name: 'unlock',
-    description: 'unlocks a channel',
+    description: 'Unlocks a channel',
     category: '🎯 - Moderation',
+    usage: "[this_channel/channel**] **#channel @role",
     run: (client, message, args) =>{
+        on = 0
+
+    
+        if(on != 1){
+            message.channel.send("This command was disabled because of discord.js v13's changes, it will be back but different, it will not have some packages.")
+        }
         let arg = message.content.trim().split(/ +/g);
         const guildLang = db[message.guild.id]["language"]
         const error_embed = new Discord.MessageEmbed();
@@ -19,7 +28,7 @@ module.exports = {
         error_embed.setFooter("Toaster - Created by Adloya");
         error_embed.setTimestamp();
 
-        if (!message.member.hasPermission('MANAGE_CHANNELS') || !message.member.hasPermission('MANAGE_ROLES')) {
+        if (!message.member.permissions.has('MANAGE_CHANNELS') || !message.member.permissions.has('MANAGE_ROLES')) {
             error_embed.addFields(
                 { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["MissingPermission"]}` }
             );
@@ -27,7 +36,7 @@ module.exports = {
             error_embed.fields = [];
             return;
         }else{
-            if (!message.guild.me.hasPermission("MANAGE_CHANNELS") || !message.member.hasPermission('MANAGE_ROLES')) {
+            if (!message.guild.me.permissions.has("MANAGE_CHANNELS") || !message.member.permissions.has('MANAGE_ROLES')) {
                 error_embed.addFields(
                     { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["BotMissingPermission"]}` }
                 );
@@ -109,16 +118,17 @@ module.exports = {
                                 })
                                 channeltolock.setName(`${channel_og_name}`);
                                 const lock_embed = new Discord.MessageEmbed()
-                                .setColor(`${default_embeds_color}`)
-                                .setAuthor("Toaster", "http://adloteam.42web.io/adloteam/Toaster/MULTI.png")
-                                .setFooter(`Toaster - Created by Adloya | ${language[guildLang]["EndNoteLock"]}`)
-                                .setTitle("🔐 | Lock !")
-                                .setTimestamp()
-                                .addFields(
-                                    { name: `${emojis["yes"]} ${language[guildLang]["UnLocked"]}`, value: `${language[guildLang]["ChannelUnLockedPt1"]}` + channeltolock + `${language[guildLang]["ChannelUnLockedPt2"]}` + role + `${language[guildLang]["ChannelUnLockedEnd"]}`}
-                                );
+                                    .setColor(`${default_embeds_color}`)
+                                    .setAuthor("Toaster", "http://adloteam.42web.io/adloteam/Toaster/MULTI.png")
+                                    .setFooter(`Toaster - Created by Adloya | ${language[guildLang]["EndNoteLock"]}`)
+                                    .setTitle("🔐 | Lock !")
+                                    .setTimestamp()
+                                    .addFields(
+                                        { name: `${emojis["yes"]} ${language[guildLang]["UnLocked"]}`, value: `${language[guildLang]["ChannelUnLockedPt1"]}` + channeltolock + `${language[guildLang]["ChannelUnLockedPt2"]}` + role + `${language[guildLang]["ChannelUnLockedEnd"]}`}
+                                    );
                                 message.channel.send(lock_embed)
-                                return;                            }
+                                return;                            
+                            }
                         }
                     }
                 }

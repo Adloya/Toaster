@@ -10,6 +10,13 @@ module.exports = {
     description: 'The hangman game...On discord...With a bot...What a strange command !',
     category: '🎉 - Fun',
     run: async(client, message, args) => {
+        on = 0
+
+    
+    if(on != 1){
+        message.channel.send("This command was disabled because of discord.js v13's changes, it will be back but different, it will not have some packages.")
+    }
+
         const guildLang = db[message.guild.id]["language"]
 
         const error_embed = new Discord.MessageEmbed();
@@ -19,8 +26,8 @@ module.exports = {
         error_embed.setFooter("Toaster - Created by Adloya");
         error_embed.setTimestamp();
 
-        if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(`${language[guildLang]["MissingPermission"]}`)
-        if (!message.guild.me.hasPermission("MANAGE_MESSAGES")) {
+        if (!message.member.permissions.has("MANAGE_MESSAGES")) return message.channel.send(`${language[guildLang]["MissingPermission"]}`)
+        if (!message.guild.me.permissions.has("MANAGE_MESSAGES")) {
             error_embed.addFields(
                 {
                     name: `${language[guildLang]["ErrorBasic"]}`,

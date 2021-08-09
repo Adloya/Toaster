@@ -17,14 +17,14 @@ const error_embed = new Discord.MessageEmbed()
 
 module.exports = {
     name: 'nuke',
-    description: 'Delete all loaded messages in the channel',
+    description: 'Deletes all loaded messages in the channel',
     category: '🎯 - Moderation',
     aliases: ['clearall'],
     run: async (client, message, args) => {
         const guildLang = db[message.guild.id]["language"]
 
-        if(message.member.hasPermission("MANAGE_MESSAGES")) {
-            if (!message.member.hasPermission('MANAGE_MESSAGES')) {
+        if(message.member.permissions.has("MANAGE_MESSAGES")) {
+            if (!message.member.permissions.has('MANAGE_MESSAGES')) {
                 error_embed.addFields(
                     { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["MissingPermission"]} (MANAGE_MESSAGES)` }
                 )
@@ -32,7 +32,7 @@ module.exports = {
                 error_embed.spliceFields();
                 return;
             }else{
-                if (!message.guild.me.hasPermission("MANAGE_MESSAGES")) {
+                if (!message.guild.me.permissions.has("MANAGE_MESSAGES")) {
                     error_embed.addFields(
                         {
                             name: `${language[guildLang]["ErrorBasic"]}`,

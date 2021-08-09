@@ -1,28 +1,15 @@
-//        _______ _______ ______ _   _ _______ _____ ____  _   _  
-//     /\|__   __|__   __|  ____| \ | |__   __|_   _/ __ \| \ | | 
-//    /  \  | |     | |  | |__  |  \| |  | |    | || |  | |  \| | 
-//   / /\ \ | |     | |  |  __| | . ` |  | |    | || |  | | . ` | 
-//  / ____ \| |     | |  | |____| |\  |  | |   _| || |__| | |\  | 
-// /_/    \_\_|     |_|  |______|_| \_|  |_|  |_____\____/|_| \_| 
-                                                                
-                                                                
-//  ____          _____     _____ ____  _____  ______             
-// |  _ \   /\   |  __ \   / ____/ __ \|  __ \|  ____|            
-// | |_) | /  \  | |  | | | |   | |  | | |  | | |__               
-// |  _ < / /\ \ | |  | | | |   | |  | | |  | |  __|              
-// | |_) / ____ \| |__| | | |___| |__| | |__| | |____             
-// |____/_/    \_\_____/   \_____\____/|_____/|______|            
-
-// https://starecat.com/content/wp-content/uploads/when-you-read-some-incredibly-bad-code-thinking-what-a-moron-wrote-this-but-halfway-through-it-starts-to-become-familiar-obi-wan-kenobi-well-of-course-i-know-him-hes-me.jpg
-
-
 const Discord = require('discord.js');
-const client = new Discord.Client();
+const fs = require('fs');
+
+
+// const intents = new Discord.Intents(32767)
+// const client = new Discord.Client();
+const client = new Discord.Client({ intents: 32767 });
+
 const config = require('./config.json');
 const db = require("./db.json");
-const language = require('./lists/language.json')
- 
-const fs = require('fs');
+const language = require('./lists/language.json');
+
 error_color = "#fc1c03"
 
 client.commands = new Discord.Collection();

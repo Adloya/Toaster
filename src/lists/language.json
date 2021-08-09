@@ -133,6 +133,10 @@
         "ToasterGithub": "📂 | Github de Toaster : ",
         "InviteToaster": "🧧 | Inviter Toaster sur votre serveur : ",
         "VoteTopGG": "💗 | Voter pour Toaster sur Top.gg",
+        "DiscordServerSimple": "💬 Serveur Discord",
+        "ToasterGithubSimple": "📂 Github de Toaster",
+        "InviteToasterSimple": "🧧 Inviter Toaster",
+        "VoteTopGGSimple": "💗 Voter sur Top.gg",
 
         "InfoOn": "Informations sur",
         "UsrNameOnServer": "Pseudo sur ce serveur",
@@ -200,7 +204,11 @@
         "UnLocked": "Dévérrouillé",
 
         "SlowmodeDesc": "Modification du mode lent",
-        "Slowmode1": "Le mode lent a été fixé à : "
+        "Slowmode1": "Le mode lent a été fixé à : ",
+
+        "FlipCoinTitle": "🪙 | Pile ou face ?",
+        "Heads": "Pile !",
+        "Tails": "Face !"
     },
 
 
@@ -339,6 +347,10 @@
         "ToasterGithub": "📂 | Toaster's Github : ",
         "InviteToaster": "🧧 | Invite Toaster on your server : ",
         "VoteTopGG": "💗 | Vote for Toaster on Tog.gg",
+        "DiscordServerSimple": "💬 Support Server",
+        "ToasterGithubSimple": "📂 Toaster's Github",
+        "InviteToasterSimple": "🧧 Invite Toaster",
+        "VoteTopGGSimple": "💗 Vote on Tog.gg",
 
         "InfoOn": "Informations about",
         "UsrNameOnServer": "Username on this server",
@@ -397,7 +409,11 @@
         "Locked": "Locked !",
         
         "SlowmodeDesc": "Slowmode modification",
-        "Slowmode1": "Slowmode has been set to : "
+        "Slowmode1": "Slowmode has been set to : ",
+
+        "FlipCoinTitle": "🪙 | Flip a coin !",
+        "Heads": "Heads !",
+        "Tails": "Tails !"
     },
 
 

@@ -16,7 +16,7 @@ function SaveDBs() { // Fonction pour sauvegarder la base de données
             error_embed.addFields(
                 {name: `Une erreur est survenue : `, value: `${err}`}
             )
-            message.channel.send(error_embed);
+            message.channel.send({embeds : [error_embed]});
             error_embed.fields = [];
         }
     });
@@ -40,12 +40,12 @@ module.exports = {
         error_embed.setTimestamp();
 
 
-        if(message.member.hasPermission("ADMINISTRATOR")) {
+        if(message.member.permissions.has("ADMINISTRATOR")) {
             if(!arg[1]){
                 error_embed.addFields(
                     { name: `${language[guildLang]["ErrorBasic"]}`, value: 'Specify the language' }
                 );
-                message.channel.send(error_embed);
+                message.channel.send({embeds : [error_embed]});
                 error_embed.fields = [];
             }else{
                 if(arg[1] === "English"){
@@ -85,7 +85,7 @@ module.exports = {
                         { name: 'French', value: `FRANCE FRENCH`},
                         { name: 'English', value: 'US/UK ENGLISH' },
                     );
-                    message.channel.send(lang_embed);
+                    message.channel.send({embeds : [lang_embed]});
                     lang_embed.fields = [];
                     return;
                 }
@@ -93,7 +93,7 @@ module.exports = {
                     error_embed.addFields(
                         { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["LangDoesntExist1"]}` + '``language list``' + `${language[guildLang]["LangDoesntExist1.2"]}` }
                     );
-                    message.channel.send(error_embed);
+                    message.channel.send({embeds : [error_embed]});
                     error_embed.fields = [];
                     return;
                 }
@@ -107,7 +107,7 @@ module.exports = {
                     lang_embed.addFields(
                         {name: `${language[guildLang]["LanguageHasBeenSet"]} `, value: db[message.guild.id]["language"]}
                     )
-                    message.channel.send(lang_embed);
+                    message.channel.send({embeds : [lang_embed]});
                     lang_embed.fields = [];
             }
         }

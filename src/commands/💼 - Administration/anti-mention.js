@@ -13,10 +13,8 @@ const error_color = colors["error_embed"];
 function SaveDBs() { // Fonction pour sauvegarder la base de données
     fs.writeFile("./db.json", JSON.stringify(db, null, 4), (err) => {
         if (err) {
-            error_embed.addFields(
-                {name: `Une erreur est survenue : `, value: `${err}`}
-            )
-            message.channel.send({embeds : [error_embed]});
+      error_embed.addFields(`Une erreur est survenue : `, `${err}`)            
+      message.channel.send({embeds : [error_embed]});
             error_embed.fields = [];
         }
     });
@@ -45,9 +43,7 @@ module.exports = {
         if(message.member.permissions.has("ADMINISTRATOR")) {
 
             if(!arg[1]){
-                error_embed.addFields(
-                    { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["SpecifyConfig4"]}` }
-                );
+                error_embed.addField(`${language[guildLang]["ErrorBasic"]}`, `${language[guildLang]["SpecifyConfig4"]}`);
                 message.channel.send({embeds : [error_embed]});
                 error_embed.fields = [];
                 return;
@@ -62,9 +58,7 @@ module.exports = {
                         antilinks_embed.setFooter("Toaster - Created by Adloya");
                         antilinks_embed.setTitle(`${emojis["yes"]} | ${language[guildLang]["Activated"]} !`);
                         antilinks_embed.setTimestamp();
-                        antilinks_embed.addFields(
-                            { name: `${language[guildLang]["AntiMentionStatus"]}`, value: `${language[guildLang]["Activated"]}`}
-                        );
+                        antilinks_embed.addField(`${language[guildLang]["AntiMentionStatus"]}`,`${language[guildLang]["Activated"]}`);
                         message.channel.send({embeds : [antilinks_embed]});
                         await message.react("✅");
                         antilinks_embed.fields = [];
@@ -79,9 +73,7 @@ module.exports = {
                         antilinks_embed.setFooter("Toaster - Created by Adloya");
                         antilinks_embed.setTitle(`${emojis["no"]} | ${language[guildLang]["Disabled"]} !`);
                         antilinks_embed.setTimestamp();
-                        antilinks_embed.addFields(
-                            { name: `${language[guildLang]["AntiMentionStatus"]}`, value: `${language[guildLang]["Disabled"]}`}
-                        );
+                        antilinks_embed.addField(`${language[guildLang]["AntiMentionStatus"]}`,`${language[guildLang]["Disabled"]}`);
                         message.channel.send({embeds : [antilinks_embed]});
                         await message.react("✅");
                         antilinks_embed.fields = [];
@@ -95,9 +87,7 @@ module.exports = {
                         antilinks_embed.setFooter("Toaster - Created by Adloya");
                         antilinks_embed.setTitle(`${emojis["no"]} | ${language[guildLang]["Disabled"]} !`);
                         antilinks_embed.setTimestamp();
-                        antilinks_embed.addFields(
-                            { name: `${language[guildLang]["AntiMentionStatus"]}`, value: `${language[guildLang]["Disabled"]}`}
-                        );
+                        antilinks_embed.addField(`${language[guildLang]["AntiMentionStatus"]}`, `${language[guildLang]["Disabled"]}`);
                         message.channel.send({embeds : [antilinks_embed]});
                         antilinks_embed.fields = [];
                     }
@@ -109,17 +99,13 @@ module.exports = {
                         antilinks_embed.setFooter("Toaster - Created by Adloya");
                         antilinks_embed.setTitle(`${emojis["yes"]} | ${language[guildLang]["Activated"]} !`);
                         antilinks_embed.setTimestamp();
-                        antilinks_embed.addFields(
-                            { name: `${language[guildLang]["AntiMentionStatus"]}`, value: `${language[guildLang]["Activated"]}`}
-                        );
+                        antilinks_embed.addField(`${language[guildLang]["AntiMentionStatus"]}`, `${language[guildLang]["Activated"]}`);
                         message.channel.send({embeds : [antilinks_embed]});
                         antilinks_embed.fields = [];
                     }
                 }
                 if(arg[1] != "on" && arg[1] != "off" && arg[1] != "status"){
-                    error_embed.addFields(
-                        { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["InvalidArgument"]} (on / off / status)` }
-                    );
+                    error_embed.addField(`${language[guildLang]["ErrorBasic"]}`, `${language[guildLang]["InvalidArgument"]} (on / off / status)` );
                     message.channel.send({embeds : [error_embed]});
                     error_embed.fields = [];
                     return;

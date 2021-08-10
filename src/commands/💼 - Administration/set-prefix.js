@@ -13,10 +13,9 @@ const error_color = colors["error_embed"];
 function SaveDBs() { // Fonction pour sauvegarder la base de données
     fs.writeFile("./db.json", JSON.stringify(db, null, 4), (err) => {
         if (err) {
-            error_embed.addFields(
-                {name: `Une erreur est survenue : `, value: `${err}`}
-            )
-            message.channel.send(error_embed);
+    
+error_embed.addFields(`Une erreur est survenue : `, `${err}`)
+            message.channel.send({embeds : [error_embed]});
             error_embed.fields = [];
         }
     });
@@ -26,7 +25,7 @@ module.exports = {
     name: 'set-prefix',
     description: 'Changes the bot\'s prefix on your server',
     category: '💼 - Administration',
-    aliases: [],
+    aliases: ["setprefix", "prefix"],
     usage: '[new prefix]',
     run: async(client, message, args) => {
         const guildLang = db[message.guild.id]["language"]
@@ -39,13 +38,11 @@ module.exports = {
         error_embed.setTimestamp();
 
 
-        if(message.member.hasPermission("ADMINISTRATOR")) {
+        if(message.member.permissions.has("ADMINISTRATOR")) {
             let arg = message.content.trim().split(/ +/g)
             if(!arg[1]){
-                error_embed.addFields(
-                    { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["SpecifyConfig2"]}` }
-                );
-                message.channel.send(error_embed);
+                error_embed.addField(`${language[guildLang]["ErrorBasic"]}`, `${language[guildLang]["SpecifyConfig2"]}`);
+                message.channel.send({embeds : [error_embed]});
                 error_embed.fields = [];
                 return;
             }
@@ -59,18 +56,14 @@ module.exports = {
                 prefix_embed.setFooter("Toaster - Created by Adloya");
                 prefix_embed.setTitle(`${emojis["yes"]} | ${language[guildLang]["PrefixUpdatedTitle"]}`);
                 prefix_embed.setTimestamp();
-                prefix_embed.addFields(
-                    { name: `${language[guildLang]["PrefixUpdatedSuccess"]}`, value: '``' + arg[1] + '``'}
-                );
-                message.channel.send(prefix_embed)
-                await message.react("✅");
+                prefix_embed.addField(`${language[guildLang]["PrefixUpdatedSuccess"]}`, '``' + arg[1] + '``');
+                message.channel.send({embeds : [prefix_embed]});
+
                 prefix_embed.fields = [];
             }
         }else{
-            error_embed.addFields(
-                { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["MissingPermission"]}` }
-            );
-            message.channel.send(error_embed);
+            error_embed.addFields(`${language[guildLang]["ErrorBasic"]}`, `${language[guildLang]["MissingPermission"]}`);
+            message.channel.send({embeds : [error_embed]});
             error_embed.fields = [];
             return;
         }

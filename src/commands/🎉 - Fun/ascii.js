@@ -31,7 +31,7 @@ module.exports = {
                         value: `${language[guildLang]["MsgTooLong"]}`
                     }
                 );
-                message.channel.send(error_embed);
+                message.channel.send({embeds : [error_embed]});
                 error_embed.fields = [];
         }else{
             if(args.join(" ").length < 1){
@@ -47,7 +47,7 @@ module.exports = {
                             value: `${language[guildLang]["MsgTooShort"]}`
                         }
                     );
-                    message.channel.send(error_embed);
+                    message.channel.send({embeds : [error_embed]});
                     error_embed.fields = [];
                     return;
             }else{

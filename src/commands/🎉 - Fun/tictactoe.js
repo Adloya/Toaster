@@ -14,6 +14,7 @@ module.exports = {
     
     if(on != 1){
         message.channel.send("This command was disabled because of discord.js v13's changes, it will be back but different")
+        return;
     }
         const guildLang = db[message.guild.id]["language"]
         const member = message.mentions.members.first()

@@ -14,7 +14,8 @@ module.exports = {
 
     
     if(on != 1){
-        message.channel.send("This command was disabled because of discord.js v13's changes, it will be back but different, it will not have some packages.")
+        message.channel.send("This command was disabled because of discord.js v13's changes, it will be back but different")
+        return;
     }
 
         const guildLang = db[message.guild.id]["language"]
@@ -34,7 +35,7 @@ module.exports = {
                     value: `${language[guildLang]["BotMissingPermission"]}`
                 }
             );
-            message.channel.send(error_embed);
+            message.channel.send({embeds : [error_embed]});
             error_embed.fields = [];
         }
         const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])

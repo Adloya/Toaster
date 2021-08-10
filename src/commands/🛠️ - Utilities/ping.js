@@ -21,9 +21,7 @@ module.exports = {
                 {name: `${emojis["lag"]} | ${language[guildLang]["PingLatency"]} : `, value: `\`\`${msg.createdTimestamp - message.createdTimestamp}ms\`\``},
                 {name: `${emojis["discordJs"]} | ${language[guildLang]["APILatency"]} : `, value: `\`\`${Math.round(client.ws.ping)}ms\`\``}
             );
-            msg.edit(
-                ping_embed
-            )
+            msg.edit({embeds : [ping_embed]})
 
             
     }

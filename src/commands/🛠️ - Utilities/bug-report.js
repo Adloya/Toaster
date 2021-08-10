@@ -31,8 +31,8 @@ module.exports = {
                 {name: 'Server : ', value: message.guild.name, inline: true},
                 {name: 'Bug : ', value: query, inline: true}
             );
-        client.channels.cache.get(destinationChannel).send(reportEmbed);
+        client.channels.cache.get(destinationChannel).send({embeds : [reportEmbed]});
         message.channel.send(`${language[guildLang]["ReportSent"]}`);
-        message.channel.send(reportEmbed);
+        message.channel.send({embeds : [reportEmbed]});
     }
 }

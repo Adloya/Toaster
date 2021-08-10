@@ -13,21 +13,23 @@ module.exports = {
     category: '🛠️ - Utilities',
     run: async (client, message, args) => {
         const guildLang = db[message.guild.id]["language"]
+        if(!args[1]){
+            message.channel.send(language[guildLang]["MissingArg"])
+            return
+        }
         try {
             math_embed = new Discord.MessageEmbed()
-                .addFields(
-                    {name: `${language[guildLang]["Calculation"]} :`, value: args.join(" ")},
-                    {name: `${language[guildLang]["Answer"]} :`, value: math.evaluate(args.join(" "))}
-                )
+                .addField(`${language[guildLang]["Calculation"]} :`, args.join(" "))
+                .addField(`${language[guildLang]["Answer"]} : `, `${math.evaluate(args.join(" "))}`)
                 .setColor(`${default_embeds_color}`)
                 .setAuthor("Toaster", "http://adloteam.42web.io/adloteam/Toaster/MULTI.png")
                 .setDescription(`${language[guildLang]["ResolveTitle"]}`)
                 .setFooter("Toaster - Created by Adloya")
                 .setTitle(`🔢 | ${language[guildLang]["Calculation"]}`)
                 .setTimestamp()
-            message.channel.send(math_embed);
+            message.channel.send({embeds : [math_embed]});
         }catch (err){
-            message.channel.send(`${language[guildLang]["InvalidArg"]}`)
+            message.channel.send(`Verrify your arguments and retry (${err})`)
         }
     }
 }

@@ -39,22 +39,22 @@ module.exports = {
             .setTitle(`${language[guildLang]["ComboSearch"]}`)
             .setDescription(`${language[guildLang]["CombSearchDesc"]}`)
             .setTimestamp()
-            .addField("**__Search Engines Results__**", [
-                `[Google](${google_res})`,
-                `[DuckDuckGo](${duckduckgo_res})`,
-                `[Bing](${bing_res})`,
-                `[Qwant](${qwant_res})`,
-                `[Brave](${brave_res})`
-            ])
-            .addField("**__Social Networks Results__**", [
-                `[Youtube](${yt_res})`,
-                `[Youtube Music](${ytmusic_res})`,
-                `[Twitch](${twitch_res})`,
-                `[Twitter](${twitter_res})`,
-                `[Instagram (accounts)](${instagram_res})`,
-                `[Tiktok](${tiktok_res})`
-            ])
+            .addField("**__Search Engines Results__**", `
+                [Google](${google_res})
+                [DuckDuckGo](${duckduckgo_res})
+                [Bing](${bing_res})
+                [Qwant](${qwant_res})
+                [Brave](${brave_res})
+            `)
+            .addField("**__Social Networks Results__**", `
+                [Youtube](${yt_res})
+                [Youtube Music](${ytmusic_res})
+                [Twitch](${twitch_res})
+                [Twitter](${twitter_res})
+                [Instagram (accounts)](${instagram_res})
+                [Tiktok](${tiktok_res})
+            `)
 
-        message.channel.send(combosearch_embed);
+        message.channel.send({embeds : [combosearch_embed]});
     }
 }

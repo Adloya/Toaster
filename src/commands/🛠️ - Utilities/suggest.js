@@ -25,13 +25,11 @@ module.exports = {
             .setFooter("Toaster - Created by Adloya")
             .setTitle(`❗ | ${language[guildLang]["SuggestSimple"]}`)
             .setTimestamp()
-            .addFields(
-                {name: 'User : ', value: message.author.toString(), inline: true},
-                {name: 'Server ', value: message.guild.name, inline: true},
-                {name: 'Suggestion : ', value: query, inline: true}
-            );
-        client.channels.cache.get(destinationChannel).send(sgEmbed);
+            .addField('User : ', `${message.author.toString()}`, true)
+            .addField('Server ', `${message.guild.name}`, true)
+            .addField('Suggestion : ', `${query}`, true)
+        client.channels.cache.get(destinationChannel).send({embeds : [sgEmbed]});
         message.channel.send(`${language[guildLang]["SuggestionSent"]}`);
-        message.channel.send(sgEmbed);
+        message.channel.send({embeds : [sgEmbed]});
     }
 }

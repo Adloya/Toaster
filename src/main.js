@@ -40,6 +40,10 @@ client.on("guildCreate", (guild, client) =>{
     SaveDBs();
 })
 
+client.on("guildDelete", (guild, client) =>{
+    delete db[guild.id]
+})
+
 
 // fonction qui charge les évènements
 const loadEvents = (dir = "./events/") => {

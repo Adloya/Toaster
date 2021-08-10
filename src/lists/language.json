@@ -14,6 +14,7 @@
         "Status": "Status",
         "Statut": "Statut",
         "Roles": "Rôles",
+        "Help": "Commande d'aide : ",
 
         "InvalidArg": "Argument Invalide",
         "MissingArg": "Argument manquant",
@@ -26,7 +27,7 @@
         "SpecifyRole": "Spécifiez un role en le mentionnant",
         "AlreadyExists": "existe déja !",
         "DoesntExists": "n'existe pas !",
-        "SmDurationNotSpecified": "Spécifiez une intervalle de temps pour le mode lent ou faites ``slowmode off`` pour le désactiver",
+        "SmDurationNotSpecified": "Spécifiez une intervalle de temps pour le mode lent ou faites ``slowmode 0`` pour le désactiver",
 
         "Test": "Oui",
 
@@ -228,6 +229,7 @@
         "Status": "Status",
         "Statut": "Statut",
         "Roles": "Roles",
+        "Help": "Help Command : ",
         
         "Seconds": "seconds",
 
@@ -241,7 +243,7 @@
         "SpecifyRole": "Specify a role by mentionning it",
         "AlreadyExists": "already exists !",
         "DoesntExists": "doesn't exists !",
-        "SmDurationNotSpecified": "Specify a duration (in seconds) for the slow mode or do ``slowmode off`` to turn it off",
+        "SmDurationNotSpecified": "Specify a duration (in seconds) for the slow mode or do ``slowmode 0`` to turn it off",
 
         "Test": "Yes",
 

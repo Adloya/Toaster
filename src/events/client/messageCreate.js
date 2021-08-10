@@ -69,17 +69,17 @@ module.exports = (client, message) => {
     if (message.mentions.has(client.user.id)) {
         if(!message.content.includes("@here") || message.content.includes("@everyone")){
             // if(!db[message.guild.id]["anti-mention"] === "on"){
-                const mention_embed = new Discord.MessageEmbed()
-                    .setColor(default_embeds_color)
-                    .setAuthor("Toaster", "http://adloteam.42web.io/adloteam/Toaster/MULTI.png")
-                    .setFooter("Toaster - Created by Adloya")
-                    .setTimestamp()
-                    .setTitle(`Bonjour ! Je suis Toaster !`)
-                    .setDescription(`Voici des informations sur moi`)
-                    .addField(`${language[guildLang]['Prefix']}`, "``" + `${db[message.guild.id]["prefix"]}` + "``")
-                    .addField(`${language[guildLang]["HelpCMD"]}`, '``' + `${db[message.guild.id]["prefix"]}` + "help``")
-                    
-                message.channel.send({embeds : [mention_embed]})
+            const mention_embed = new Discord.MessageEmbed()
+                .setColor(default_embeds_color)
+                .setAuthor("Toaster", "http://adloteam.42web.io/adloteam/Toaster/MULTI.png")
+                .setFooter("Toaster - Created by Adloya")
+                .setTimestamp()
+                .setTitle(`Bonjour ! Je suis Toaster !`)
+                .setDescription(`Voici des informations sur moi`)
+                .addField(`${language[guildLang]['Prefix']}`, "``" + `${db[message.guild.id]["prefix"]}` + "``")
+                .addField(`Aide / Help`, '``' + `${db[message.guild.id]["prefix"]}` + "help``")
+                
+            message.channel.send({embeds : [mention_embed]})
             // }
         }
     }

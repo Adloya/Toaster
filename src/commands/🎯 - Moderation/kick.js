@@ -37,6 +37,7 @@ module.exports = {
                 );
                 message.channel.send({embeds : [error_embed]});
                 error_embed.fields = [];
+                return;
             }
 
             if(!user) {
@@ -49,6 +50,7 @@ module.exports = {
                 );
                 message.channel.send({embeds : [error_embed]});
                 error_embed.fields = [];
+                return
             }
                 else{
                     user.kick().catch((err) => {

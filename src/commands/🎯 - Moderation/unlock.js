@@ -13,12 +13,12 @@ module.exports = {
     category: '🎯 - Moderation',
     usage: "[this_channel/channel**] **#channel @role",
     run: (client, message, args) =>{
-        on = 0
+        // on = 0
 
     
-        if(on != 1){
-            message.channel.send("This command was disabled because of discord.js v13's changes, it will be back but different, it will not have some packages.")
-        }
+        // if(on != 1){
+        //     message.channel.send("This command was disabled because of discord.js v13's changes, it will be back but different, it will not have some packages.")
+        // }
         let arg = message.content.trim().split(/ +/g);
         const guildLang = db[message.guild.id]["language"]
         const error_embed = new Discord.MessageEmbed();
@@ -32,7 +32,7 @@ module.exports = {
             error_embed.addFields(
                 { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["MissingPermission"]}` }
             );
-            message.channel.send(error_embed);
+            message.channel.send({embeds : [error_embed]});
             error_embed.fields = [];
             return;
         }else{
@@ -40,7 +40,7 @@ module.exports = {
                 error_embed.addFields(
                     { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["BotMissingPermission"]}` }
                 );
-                message.channel.send(error_embed);
+                message.channel.send({embeds : [error_embed]});
                 error_embed.fields = [];
                 return;
             }else{
@@ -48,7 +48,15 @@ module.exports = {
                 error_embed.addFields(
                     { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["NoArg1UnLock"]}` }
                 );
-                message.channel.send(error_embed);
+                message.channel.send({embeds : [error_embed]});
+                error_embed.fields = [];
+                return;
+            }
+            if(!message.mentions.roles.first()){
+                error_embed.addFields(
+                    { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["SpecifyRole"]}` }
+                );
+                message.channel.send({embeds : [error_embed]});
                 error_embed.fields = [];
                 return;
             }
@@ -58,14 +66,14 @@ module.exports = {
                             error_embed.addFields(
                                 { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["SpecifyRole"]}` }
                             );
-                            message.channel.send(error_embed);
+                            message.channel.send({embeds : [error_embed]});
                             error_embed.fields = [];
                             return;
                         }
                         else{
                             role = message.mentions.roles.first()
                             const channel_og_name = message.channel.name.replace('🔐', '')
-                            message.channel.updateOverwrite(role, { 
+                            message.channel.permissionOverwrites.edit(role, { 
                                 SEND_MESSAGES: true,
                                 ADD_REACTIONS: true,
                             })
@@ -93,7 +101,7 @@ module.exports = {
                                 error_embed.addFields(
                                     { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["SpecifyChannelMention"]}` }
                                 );
-                                message.channel.send(error_embed);
+                                message.channel.send({embeds : [error_embed]});
                                 error_embed.fields = [];
                                 return;
                             }
@@ -101,15 +109,31 @@ module.exports = {
                                 error_embed.addFields(
                                     { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["SpecifyRole"]}` }
                                 );
-                                message.channel.send(error_embed);
+                                message.channel.send({embeds : [error_embed]});
+                                error_embed.fields = [];
+                                return;
+                            }
+                            if(!message.mentions.channels.first()){
+                                error_embed.addFields(
+                                    { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["SpecifyChannelMention"]}` }
+                                );
+                                message.channel.send({embeds : [error_embed]});
+                                error_embed.fields = [];
+                                return;
+                            }
+                            if(!message.mentions.roles.first()){
+                                error_embed.addFields(
+                                    { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["SpecifyRole"]}` }
+                                );
+                                message.channel.send({embeds : [error_embed]});
                                 error_embed.fields = [];
                                 return;
                             }
                             else{
                                 role = message.mentions.roles.first()
                                 channeltolock = message.mentions.channels.first()
-                                const channel_og_name = channeltolock.name.replace('🔐', '')
-                                channeltolock.updateOverwrite(role, { 
+                                channel_og_name = channeltolock.name.replace('🔐', '')
+                                channeltolock.permissionOverwrites.edit(role, { 
                                     SEND_MESSAGES: true
                                 })
                                 .catch(error => {
@@ -126,7 +150,7 @@ module.exports = {
                                     .addFields(
                                         { name: `${emojis["yes"]} ${language[guildLang]["UnLocked"]}`, value: `${language[guildLang]["ChannelUnLockedPt1"]}` + channeltolock + `${language[guildLang]["ChannelUnLockedPt2"]}` + role + `${language[guildLang]["ChannelUnLockedEnd"]}`}
                                     );
-                                message.channel.send(lock_embed)
+                                message.channel.send({embeds : [lock_embed]})
                                 return;                            
                             }
                         }

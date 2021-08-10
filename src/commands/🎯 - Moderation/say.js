@@ -29,15 +29,13 @@ module.exports = {
             //             value: `${language[guildLang]["BotMissingPermission"]} (SEND_MESSAGES)`
             //         }
             //     );
-            //     message.channel.send(error_embed);
+            //     message.channel.send({embeds : [error_embed]});
             //     error_embed.fields = [];
             // }else{
                 let sendMessage = message.content.substring(6);
-                if(!sendMessage){
-                    error_embed.addFields(
-                        { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["MessageNotSpecified"]}` }
-                    )
-                    message.channel.send(error_embed);
+                if(!sendMessage || !args){
+                    error_embed.addField(`${language[guildLang]["ErrorBasic"]}`, `${language[guildLang]["MessageNotSpecified"]}`)
+                    message.channel.send({embeds : [error_embed]});
                     error_embed.fields = [];
                     return;
                 }
@@ -47,10 +45,8 @@ module.exports = {
                 
                 // }
         }else{
-            error_embed.addFields(
-                { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["MissingPermission"]} (MANAGE_MESSAGES)` }
-            );
-            message.channel.send(error_embed);
+            error_embed.addField(`${language[guildLang]["ErrorBasic"]}`, `${language[guildLang]["MissingPermission"]} (MANAGE_MESSAGES)`);
+            message.channel.send({embeds : [error_embed]});
             error_embed.fields = [];
         }
     }

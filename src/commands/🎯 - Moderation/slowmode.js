@@ -23,17 +23,13 @@ module.exports = {
     run: async (client, message, args) => {
     const guildLang = db[message.guild.id]["language"]
     if (!message.member.permissions.has('MANAGE_CHANNELS')) {
-        error_embed.addFields(
-            { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["MissingPermission"]} (MANAGE_MESSAGES)` }
-        );
+        error_embed.addField(`${language[guildLang]["ErrorBasic"]}`, `${language[guildLang]["MissingPermission"]} (MANAGE_MESSAGES)`);
         message.channel.send({embeds : [error_embed]});
         error_embed.fields = [];
         return;
         }else{
             if (!message.guild.me.permissions.has("MANAGE_CHANNELS")) {
-                error_embed.addFields(
-                    { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["BotMissingPermission"]} (MANAGE_MESSAGES)` }
-                );
+                error_embed.addField(`${language[guildLang]["ErrorBasic"]}`, `${language[guildLang]["BotMissingPermission"]} (MANAGE_MESSAGES)`)
                 message.channel.send({embeds : [error_embed]});
                 error_embed.fields = [];
                 return;
@@ -78,9 +74,7 @@ module.exports = {
                             .setFooter("Toaster - Created by Adloya")
                             .setTitle("😴 | Slowmode !")
                             .setTimestamp()
-                            .addFields(
-                                { name: `${language[guildLang]["Slowmode1"]}`, value: `${durationtxt}`}
-                            );
+                            .addField(`${language[guildLang]["Slowmode1"]}`, `${durationtxt}`);
                             message.channel.send({embeds : [slow_embed]});
                         }
                 }

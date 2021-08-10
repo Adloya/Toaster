@@ -40,6 +40,7 @@ module.exports = {
                 );
                 message.channel.send({embeds : [error_embed]});
                 error_embed.fields = [];
+                return
             }
 
             if (!user) {
@@ -51,6 +52,7 @@ module.exports = {
                 );
                 message.channel.send({embeds : [error_embed]});
                 error_embed.fields = [];
+                return
             } else {
                 message.guild.members.ban(user.id).catch((err) => {
                     error_embed.addField(`${language[guildLang]["ErrorBasic"]}`, `${language[guildLang]["AdminOrHigher"]}`);
@@ -77,6 +79,7 @@ module.exports = {
                 error_embed.addFields(`${language[guildLang]["ErrorBasic"]}`, `${language[guildLang]["MissingPermission"]} (BAN_MEMBERS)`);
                 message.channel.send({embeds : [error_embed]});
                 error_embed.fields = [];
+                return
             }
         }
 }

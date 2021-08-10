@@ -28,7 +28,7 @@ module.exports = {
                 error_embed.addFields(
                     { name: `${language[guildLang]["ErrorBasic"]}`, value: `${language[guildLang]["MissingPermission"]} (MANAGE_MESSAGES)` }
                 )
-                message.channel.send(error_embed);
+                message.channel.send({embeds : [error_embed]});
                 error_embed.spliceFields();
                 return;
             }else{
@@ -39,7 +39,7 @@ module.exports = {
                             value: `${language[guildLang]["BotMissingPermission"]} (MANAGE_MESSAGES)`
                         }
                     );
-                    message.channel.send(error_embed);
+                    message.channel.send({embeds : [error_embed]});
                     error_embed.fields = [];
                 }else{
                     message.channel.messages.fetch().then((results) => {
@@ -55,7 +55,7 @@ module.exports = {
                                     value: `\`\`${error}\`\``
                                 }
                             );
-                            message.channel.send(error_embed);
+                            message.channel.send({embeds : [error_embed]});
                             error_embed.fields = [];
                             return;
                         });

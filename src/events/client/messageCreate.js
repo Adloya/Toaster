@@ -49,10 +49,8 @@ module.exports = (client, message) => {
         if(message.content.includes("<@") || message.content.includes("<@!") || message.content.includes("<@&")){
             if(!message.member.permissions.has("MANAGE_MESSAGES")) {
                 message.delete();
-                error_embed.addFields(
-                    { name: language[guildLang]["NoMentions"], value: language[guildLang]["NoMentions2"] }
-                );
-                message.channel.send(error_embed)
+                error_embed.addField(`${language[guildLang]["NoMentions"]}`, `${language[guildLang]["NoMentions2"]}`)
+                message.channel.send({embeds : [error_embed]})
                 error_embed.fields = [];
             }
         }
@@ -62,10 +60,8 @@ module.exports = (client, message) => {
         if(is_url(message.content) === true) {
             if(message.member.permissions.has("MANAGE_MESSAGES")) {
                 message.delete();
-                error_embed.addFields(
-                    { name: 'Vous ne pouvez pas envoyer de liens sur ce serveur : ', value: 'Les liens ont étés désactivés par un administrateur' }
-                );
-                message.channel.send(error_embed);
+                error_embed.addField(`${language[guildLang]["NoLinks"]}`, `${language[guildLang]["NoLinks2"]}`);
+                message.channel.send({embeds : [error_embed]});
                 error_embed.fields = [];
             }
         }
@@ -80,11 +76,10 @@ module.exports = (client, message) => {
                     .setTimestamp()
                     .setTitle(`Bonjour ! Je suis Toaster !`)
                     .setDescription(`Voici des informations sur moi`)
-                    .addFields(
-                        { name: `Prefix sur ce serveur : `, value: "``" + db[message.guild.id]["prefix"] + "``" },
-                        { name: `Commande d'aide : `, value: '``' + db[message.guild.id]["prefix"] + "help``" }
-                    )
-                message.channel.send(mention_embed)
+                    .addField(`${language[guildLang]['Prefix']}`, "``" + `${db[message.guild.id]["prefix"]}` + "``")
+                    .addField(`${language[guildLang]["HelpCMD"]}`, '``' + `${db[message.guild.id]["prefix"]}` + "help``")
+                    
+                message.channel.send({embeds : [mention_embed]})
             // }
         }
     }

@@ -44,7 +44,25 @@ module.exports = {
 
         })
 
-        
+        const links_btns = new Discord.MessageActionRow().addComponents(
+            new Discord.MessageButton()
+                .setLabel(`${language[guildLang]["DiscordServerSimple"]}`)
+                .setStyle("LINK")
+                .setURL("https://discord.gg/mxqVDtGksb"),
+            new Discord.MessageButton()
+                .setLabel(`${language[guildLang]["ToasterGithubSimple"]}`)
+                .setStyle("LINK")
+                .setURL("https://github.com/Adloya/Toaster"),
+            new Discord.MessageButton()
+                .setLabel(`${language[guildLang]["InviteToasterSimple"]}`)
+                .setStyle("LINK")
+                .setURL("https://discord.com/oauth2/authorize?client_id=860476125629382667&scope=bot&permissions=4059556959"),
+            new Discord.MessageButton()
+                .setLabel(`${language[guildLang]["VoteTopGGSimple"]}`)
+                .setStyle("LINK")
+                .setURL("https://top.gg/bot/860476125629382667/vote"),
+            )
+            
 
         const helpEmbed = new Discord.MessageEmbed()
             .setTitle(`${language[guildLang]["HelpCommandListTitle"]}`)
@@ -55,7 +73,7 @@ module.exports = {
             .setFooter("Toaster - Created by Adloya")
             .setTimestamp();
 
-            message.channel.send(helpEmbed);
+            message.channel.send({embeds: [helpEmbed], components: [links_btns]});
         }else{
             const command = client.commands.get(args[0].toLowerCase()) || client.commands.find(c => c.aliases && c.aliases.includes(args[0].toLowerCase));
 
@@ -68,7 +86,7 @@ module.exports = {
                     .setFooter("Toaster - Created by Adloya")
                     .setTimestamp();
 
-                    return message.channel.send(command404_embed);
+                    return message.channel.send({embeds: [command404_embed]});
                 }
             const helpMenu_embed = new Discord.MessageEmbed()
                 .setTitle(`${language[guildLang]["InfosCmdTitle"]}`)
@@ -82,7 +100,7 @@ module.exports = {
                 .setFooter("Toaster - Created by Adloya")
                 .setTimestamp();
 
-                return message.channel.send(helpMenu_embed)
+                return message.channel.send({embeds: [helpMenu_embed]})
         }
     }
 }

@@ -20,7 +20,7 @@ module.exports = {
         } else {
             user = message.author;
         }
-        const member = message.guild.member(user);
+        const member = message.guild.members.cache.get(user.id);
         const roles = member.roles.cache
             .sort((a, b) => b.position - a.position)
             .map(role => role.toString())
@@ -33,22 +33,22 @@ module.exports = {
             .setThumbnail(user.avatarURL)
             .setTitle(`👨‍👦 | ${language[guildLang]["InfoOn"]} ${user.username}#${user.discriminator} :`)
 
-            .addField('Identity', [
-                `> 🆔 | __ID__ : **${user.id}**`,
-                `> 🏷️ | __${language[guildLang]["UsrNameOnServer"]}__ : **${member.nickname ? member.nickname : 'None'}**`
-            ])
-            .addField('Timestamps', [
-                `> 💫 | __${language[guildLang]["AccountCreatedAt"]}__ : **${moment(member.user.createdTimestamp).format('LT')} ${moment(member.user.createdTimestamp).format('LL')} : ${moment(member.user.createdTimestamp).fromNow()}**`,
-                `> ➡️ | __${language[guildLang]["ServerJoinedAt"]}__ : **${moment.utc(member.joinedAt).format('dddd, MMMM, Do YYYY, HH:mm:ss')}**`
-            ])
-            .addField('Online Appearence', [
-                `> 👤 | __${language[guildLang]["Status"]}__ : **${member.user.presence.status}**`,
-                `> 🕹️ | __${language[guildLang]["Statut"]}__ : **${user.presence.game ? user.presence.game.name : 'None'}**`
-            ])
-            .addField('Server', [
-                `> 🔖 | __${language[guildLang]["Roles"]}__ : **${roles.length}: ${roles.length < 10 ? roles.join(', ') : roles.length > 10 ? this.client.utils.trimArray(roles) : "None"}**`
-            ])
+            .addField('Identity', `
+                > 🆔 | __ID__ : **${user.id}**
+                > 🏷️ | __${language[guildLang]["UsrNameOnServer"]}__ : **${member.nickname ? member.nickname : 'None'}**
+            `)
+            .addField('Timestamps', `
+                > 💫 | __${language[guildLang]["AccountCreatedAt"]}__ : **${moment(member.user.createdTimestamp).format('LT')} ${moment(member.user.createdTimestamp).format('LL')} : ${moment(member.user.createdTimestamp).fromNow()}**
+                > ➡️ | __${language[guildLang]["ServerJoinedAt"]}__ : **${moment.utc(member.joinedAt).format('dddd, MMMM, Do YYYY, HH:mm:ss')}**
+            `)
+            .addField('Online Appearence', `
+                > 👤 | __${language[guildLang]["Status"]}__ : **${member.presence?.status ? member.presence.status : 'None (Wait, that\'s not possible 🤨)'}**
+                > 🕹️ | __${language[guildLang]["Statut"]}__ : **${user.presence?.game ? user.presence.game.name : 'None'}**
+            `)
+            .addField('Server', `
+                > 🔖 | __${language[guildLang]["Roles"]}__ : **${roles.length}: ${roles.length < 10 ? roles.join(', ') : roles.length > 10 ? this.client.utils.trimArray(roles) : "None"}**
+            `)
         
-        message.channel.send(usrinfo_embed);
-    }
+            return message.channel.send({embeds: [usrinfo_embed]})
+        }
 }

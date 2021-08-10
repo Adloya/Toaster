@@ -22,19 +22,9 @@ module.exports = {
         .setTimestamp()
         .setTitle("🪧 | Toaster - Informations")
 
-        .addField('System', [
-            `> ⚡ | __${language[guildLang]["MemUsed"]}__ : **${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB**`,
-            `> ⏱️ | __Uptime__ : **${Math.floor(client.uptime / 1000 / 60).toString()} minutes**`
-        ])
-        .addField('Stats', [
-            `> 🗃️ | __${language[guildLang]["Servers"]}__ : **${client.guilds.cache.size.toString()}**`,
-            `> 📇 | __${language[guildLang]["Channels"]}__ : **${client.channels.cache.size.toString()}**`,
-            `> 👨‍👦 | __${language[guildLang]["Users"]}__ : **${client.guilds.cache.map(g => g.memberCount).reduce((a, b) => a + b)}**`
-        ])
-        .addField('Other', [
-            `> 📡 | __Discord.js__ : **${packagejson.dependencies['discord.js']}**`,
-            `> 🤖 | __Toaster__ : **${packagejson.version}**`
-        ])
-            message.channel.send(botinfo_embed);
+        .addField(`System`, `> ⚡ | __${language[guildLang]["MemUsed"]}__ : **${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB**\n> ⏱️ | __Uptime__ : `, `**${Math.floor(client.uptime / 1000 / 60).toString()} minutes**`)
+        .addField(`Stats`, `> 🗃️ | __${language[guildLang]["Servers"]}__ : **${client.guilds.cache.size.toString()}**\n> 📇 | __${language[guildLang]["Channels"]}__ : **${client.channels.cache.size.toString()}**\n> 👨‍👦 | __${language[guildLang]["Users"]}__ : **${client.guilds.cache.map(g => g.memberCount).reduce((a, b) => a + b)}**`)
+        .addField(`Other`, `> 📡 | __Discord.js__ : **${packagejson.dependencies['discord.js']}**\n> 🤖 | __Toaster__ : **${packagejson.version}**`)
+        message.channel.send({embeds : [botinfo_embed]});
     }
 }

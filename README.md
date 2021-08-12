@@ -4,41 +4,7 @@
 ## A light, simple, efficient and totally free DiscordBot
  <a href="https://www.npmjs.com/package/discord.js" target="_BLANK">
     <img src="https://img.shields.io/badge/discord.js-v12.5.3-blue.svg?logo=npm" alt="discordjs" />
-  </a>
-   <a href="https://www.npmjs.com/package/snakecord" target="_BLANK">
-    <img src="https://img.shields.io/twitter/url?color=Blue&label=Snakecord&logo=Npm&logoColor=blue&style=plastic&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fsnakecord" alt="snakecord" />
-  </a>
-  </a>
-   <a href="https://www.npmjs.com/package/request" target="_BLANK">
-    <img src="https://img.shields.io/twitter/url?color=Blue&label=request&logo=Npm&logoColor=blue&style=plastic&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Frequest" alt="request"/>
-  </a>
-  <a href="https://www.npmjs.com/package/child_process" target="_BLANK">
-    <img src="https://img.shields.io/twitter/url?color=Blue&label=child_process&logo=Npm&logoColor=blue&style=plastic&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fchild_process" alt="child_process"/>
-  </a>
-  <a href="https://www.npmjs.com/package/axios" target="_BLANK">
-    <img src="https://img.shields.io/twitter/url?color=Blue&label=axios&logo=Npm&logoColor=blue&style=plastic&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Faxios" alt="axios"/>
-  </a>
-  <a href="https://www.npmjs.com/package/cron" target="_BLANK">
-    <img src="https://img.shields.io/twitter/url?color=Blue&label=cron&logo=Npm&logoColor=blue&style=plastic&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fcron" alt="cron"/>
-  </a>
-  <a href="https://www.npmjs.com/package/figlet" target="_BLANK">
-    <img src="https://img.shields.io/twitter/url?color=Blue&label=figlet&logo=Npm&logoColor=blue&style=plastic&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Ffiglet" alt="figlet"/>
-  </a>
-  <a href="https://www.npmjs.com/package/fs" target="_BLANK">
-    <img src="https://img.shields.io/twitter/url?color=Blue&label=fs&logo=Npm&logoColor=blue&style=plastic&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Ffs" alt="fs"/>
-  </a>
-  <a href="https://www.npmjs.com/package/mathjs" target="_BLANK">
-    <img src="https://img.shields.io/twitter/url?color=Blue&label=mathjs&logo=Npm&logoColor=blue&style=plastic&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fmathjs" alt=""/>
-  </a>
-  <a href="https://www.npmjs.com/package/moment" target="_BLANK">
-    <img src="https://img.shields.io/twitter/url?color=Blue&label=moment&logo=Npm&logoColor=blue&style=plastic&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fmoment" alt=""/>
-  </a>
-  <a href="https://www.npmjs.com/package/opusscript" target="_BLANK">
-    <img src="https://img.shields.io/twitter/url?color=Blue&label=opusscript&logo=Npm&logoColor=blue&style=plastic&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fopusscript" alt=""/>
-  </a>
-  <a href="https://www.npmjs.com/package/reconlx" target="_BLANK">
-    <img src="https://img.shields.io/twitter/url?color=Blue&label=reconlx&logo=Npm&logoColor=blue&style=plastic&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Freconlx" alt=""/>
-  </a>
+  
   
 ### **Toaster** is a 🇫🇷 French DiscordJS bot designed to be a simple, light and efficient bot
 
@@ -91,7 +57,7 @@ To contribute you can either :
 - Use the ``bug-report``& ``suggest`` commands
 - Or use PULL-REQUESTS or if you want to suggest major changes, use ISSUES
 
-### TAKE THE TIME TO TEST YOUR CONTRIBUTIONS !!
+### TAKE THE TIME TO TEST YOUR CONTRIBUTIONS !
 
 ## Licence :
 [MIT](https://opensource.org/licenses/MIT) (LICENSE file)

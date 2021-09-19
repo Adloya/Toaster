@@ -4,6 +4,7 @@
 ## A light, simple, efficient and totally free DiscordBot
  <a href="https://www.npmjs.com/package/discord.js" target="_BLANK">
     <img src="https://img.shields.io/badge/discord.js-v13.0.1-blue.svg?logo=npm" alt="discordjs" />
+ </a>
   
   
 ### **Toaster** is a 🇫🇷 French DiscordJS bot designed to be a simple, light and efficient bot
